@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026品牌对比 | 电动车选购指南</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif; }
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --dark-bg: #0f0f23;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --accent-purple: #667eea;
+            --accent-pink: #f5576c;
+            --accent-cyan: #00f2fe;
+            --accent-green: #43e97b;
+            --border-radius: 20px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body { background: var(--dark-bg); background-image: radial-gradient(ellipse at top left, rgba(102, 126, 234, 0.3) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(245, 87, 108, 0.2) 0%, transparent 50%); color: var(--text-light); line-height: 1.8; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        
+        header { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 48px; height: 48px; background: var(--secondary-gradient); border-radius: 14px; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .logo-icon i { color: white; font-size: 1.5rem; }
+        .logo-text h1 { font-size: 1.4rem; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        .logo-text p { font-size: 0.75rem; color: var(--text-muted); }
+        nav ul { display: flex; list-style: none; gap: 8px; }
+        nav a { padding: 10px 20px; border-radius: 50px; font-weight: 600; color: var(--text-muted); transition: var(--transition); }
+        nav a:hover, nav a.active { color: white; background: var(--glass-bg); }
+        nav a.active { background: var(--secondary-gradient); }
+        
+        .content-wrapper { padding: 140px 0 80px; }
+        
+        .back-home { display: inline-flex; align-items: center; gap: 10px; background: var(--glass-bg); padding: 12px 24px; border-radius: 50px; font-weight: 600; margin-bottom: 24px; transition: var(--transition); border: 1px solid var(--glass-border); }
+        .back-home:hover { background: var(--accent-gradient); color: white; }
+        
+        .page-header { text-align: center; margin-bottom: 60px; }
+        .page-header h1 { font-size: 3rem; font-weight: 900; margin-bottom: 16px; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-header p { font-size: 1.2rem; color: var(--text-muted); }
+        
+        .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        
+        .brand-card { background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); overflow: hidden; transition: var(--transition); }
+        .brand-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(102, 126, 234, 0.25); }
+        
+        .brand-header { padding: 28px; }
+        .brand-header h3 { font-size: 1.8rem; margin-bottom: 6px; }
+        .brand-header p { color: var(--text-muted); }
+        
+        .brand-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 0 28px 28px; }
+        .stat-item { text-align: center; padding: 16px 8px; background: var(--glass-bg); border-radius: 12px; }
+        .stat-value { font-size: 1.4rem; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+        
+        .brand-pros-cons { padding: 0 28px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .pros-list, .cons-list { list-style: none; }
+        .pros-list li::before { content: "✓ "; color: var(--accent-green); }
+        .cons-list li::before { content: "✗ "; color: var(--accent-pink); }
+        .pros-list li, .cons-list li { padding: 8px 0; color: var(--text-muted); font-size: 0.95rem; }
+        
+        .vs-section { text-align: center; padding: 60px 0; }
+        .vs-container { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .vs-brand { text-align: center; }
+        .vs-brand h3 { font-size: 2rem; margin-bottom: 8px; }
+        .vs-brand p { color: var(--text-muted); }
+        .vs-badge { width: 80px; height: 80px; background: var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4); }
+        
+        footer { background: rgba(15, 15, 35, 0.8); backdrop-filter: blur(20px); border-top: 1px solid var(--glass-border); padding: 60px 0 30px; margin-top: 60px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-column h3 { font-size: 1.2rem; margin-bottom: 20px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 12px; }
+        .footer-column ul li a { color: var(--text-muted); transition: var(--transition); }
+        .footer-column ul li a:hover { color: var(--accent-pink); }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted); }
+        
+        @media (max-width: 768px) { .header-container { flex-direction: column; gap: 16px; } nav ul { flex-direction: column; } .page-header h1 { font-size: 2rem; } .brand-stats { grid-template-columns: repeat(2, 1fr); } .brand-pros-cons { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <div class="logo-text">
+                    <h1>电动车选购指南</h1>
+                    <p>⚡ 年轻人的出行神器</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="电动自行车选购与升级指南网站.html">首页</a></li>
+                    <li><a href="电动自行车选购与升级指南网站.html#buying-guide">选购指南</a></li>
+                    <li><a href="电动自行车选购与升级指南网站.html#upgrade-guide">升级改装</a></li>
+                    <li><a href="brands.html" class="active">品牌对比</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="content-wrapper">
+        <div class="container">
+            <a href="电动自行车选购与升级指南网站.html" class="back-home">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            
+            <div class="page-header">
+                <h1>🏆 2026主流品牌对比</h1>
+                <p>热门电动车品牌参数横向对比，帮你做出明智选择！</p>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="brand-card" id="yadi">
+                    <div class="brand-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <h3>雅迪</h3>
+                        <p>国内销量领先的电动车品牌</p>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item"><div class="stat-value">4.5</div><div class="stat-label">综合评分</div></div>
+                        <div class="stat-item"><div class="stat-value">60-120km</div><div class="stat-label">续航</div></div>
+                        <div class="stat-item"><div class="stat-value">3000-6000</div><div class="stat-label">价格(元)</div></div>
+                        <div class="stat-item"><div class="stat-value">5000+</div><div class="stat-label">门店数</div></div>
+                    </div>
+                    <div class="brand-pros-cons">
+                        <div>
+                            <h4 style="color: var(--accent-green); margin-bottom: 12px;">✓ 优点</h4>
+                            <ul class="pros-list">
+                                <li>销量第一，口碑稳定</li>
+                                <li>门店多，售后方便</li>
+                                <li>冠能系列续航强劲</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-pink); margin-bottom: 12px;">✗ 缺点</h4>
+                            <ul class="cons-list">
+                                <li>部分机型溢价较高</li>
+                                <li>智能功能相对较少</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <h3>爱玛</h3>
+                        <p>时尚设计与性价比著称</p>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item"><div class="stat-value">4.3</div><div class="stat-label">综合评分</div></div>
+                        <div class="stat-item"><div class="stat-value">50-100km</div><div class="stat-label">续航</div></div>
+                        <div class="stat-item"><div class="stat-value">2500-5500</div><div class="stat-label">价格(元)</div></div>
+                        <div class="stat-item"><div class="stat-value">4000+</div><div class="stat-label">门店数</div></div>
+                    </div>
+                    <div class="brand-pros-cons">
+                        <div>
+                            <h4 style="color: var(--accent-green); margin-bottom: 12px;">✓ 优点</h4>
+                            <ul class="pros-list">
+                                <li>外观时尚，选择多样</li>
+                                <li>性价比高</li>
+                                <li>引擎MAX系列口碑好</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-pink); margin-bottom: 12px;">✗ 缺点</h4>
+                            <ul class="cons-list">
+                                <li>部分配件通用性一般</li>
+                                <li>智能化程度中等</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="brand-card" id="xiaoniu">
+                    <div class="brand-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <h3>小牛电动</h3>
+                        <p>智能电动车的开创者</p>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item"><div class="stat-value">4.7</div><div class="stat-label">综合评分</div></div>
+                        <div class="stat-item"><div class="stat-value">50-90km</div><div class="stat-label">续航</div></div>
+                        <div class="stat-item"><div class="stat-value">4000-8000</div><div class="stat-label">价格(元)</div></div>
+                        <div class="stat-item"><div class="stat-value">2000+</div><div class="stat-label">门店数</div></div>
+                    </div>
+                    <div class="brand-pros-cons">
+                        <div>
+                            <h4 style="color: var(--accent-green); margin-bottom: 12px;">✓ 优点</h4>
+                            <ul class="pros-list">
+                                <li>APP智能控制</li>
+                                <li>FOC矢量控制器</li>
+                                <li>OTA远程升级</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-pink); margin-bottom: 12px;">✗ 缺点</h4>
+                            <ul class="cons-list">
+                                <li>价格偏高</li>
+                                <li>续航相对一般</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-header" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <h3>九号电动车</h3>
+                        <p>智能科技与骑行体验完美结合</p>
+                    </div>
+                    <div class="brand-stats">
+                        <div class="stat-item"><div class="stat-value">4.8</div><div class="stat-label">综合评分</div></div>
+                        <div class="stat-item"><div class="stat-value">60-100km</div><div class="stat-label">续航</div></div>
+                        <div class="stat-item"><div class="stat-value">3500-7000</div><div class="stat-label">价格(元)</div></div>
+                        <div class="stat-item"><div class="stat-value">1500+</div><div class="stat-label">门店数</div></div>
+                    </div>
+                    <div class="brand-pros-cons">
+                        <div>
+                            <h4 style="color: var(--accent-green); margin-bottom: 12px;">✓ 优点</h4>
+                            <ul class="pros-list">
+                                <li>真智能（自动解锁等）</li>
+                                <li>APP功能强大</li>
+                                <li>TCS牵引力控制</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-pink); margin-bottom: 12px;">✗ 缺点</h4>
+                            <ul class="cons-list">
+                                <li>门店数量较少</li>
+                                <li>部分功能需要订阅</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vs-section">
+                <h2 style="margin-bottom: 40px;">⚡ 品牌对决</h2>
+                <div class="vs-container">
+                    <div class="vs-brand">
+                        <h3>小牛 vs 九号</h3>
+                        <p style="color: var(--text-muted);">智能电动车双雄</p>
+                        <p style="margin-top: 16px;">小牛：APP生态成熟，配件丰富<br>九号：真智能体验，TCS加持</p>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="vs-brand">
+                        <h3>雅迪 vs 爱玛</h3>
+                        <p style="color: var(--text-muted);">传统品牌巨头</p>
+                        <p style="margin-top: 16px;">雅迪：续航领先，渠道完善<br>爱玛：时尚设计，性价比高</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p style="color: var(--text-muted);">2026年最新最全的电动车选购指南平台</p>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="电动自行车选购与升级指南网站.html">🏠 首页</a></li>
+                        <li><a href="policy.html">📋 新国标政策</a></li>
+                        <li><a href="tips.html">🏍️ 上牌指南</a></li>
+                        <li><a href="brands.html">🏆 品牌对比</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 电动车选购指南 | 让出行更简单</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

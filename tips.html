@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选购避坑指南 | 电动车选购指南</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif; }
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --dark-bg: #0f0f23;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --accent-pink: #f5576c;
+            --accent-cyan: #00f2fe;
+            --accent-green: #43e97b;
+            --border-radius: 20px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body { background: var(--dark-bg); background-image: radial-gradient(ellipse at top left, rgba(102, 126, 234, 0.3) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(245, 87, 108, 0.2) 0%, transparent 50%); color: var(--text-light); line-height: 1.8; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        
+        header { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 48px; height: 48px; background: var(--secondary-gradient); border-radius: 14px; display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .logo-icon i { color: white; font-size: 1.5rem; }
+        .logo-text h1 { font-size: 1.4rem; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        .logo-text p { font-size: 0.75rem; color: var(--text-muted); }
+        nav ul { display: flex; list-style: none; gap: 8px; }
+        nav a { padding: 10px 20px; border-radius: 50px; font-weight: 600; color: var(--text-muted); transition: var(--transition); }
+        nav a:hover, nav a.active { color: white; background: var(--glass-bg); }
+        nav a.active { background: var(--secondary-gradient); }
+        
+        .content-wrapper { padding: 140px 0 80px; }
+        
+        .back-home { display: inline-flex; align-items: center; gap: 10px; background: var(--glass-bg); padding: 12px 24px; border-radius: 50px; font-weight: 600; margin-bottom: 24px; transition: var(--transition); border: 1px solid var(--glass-border); }
+        .back-home:hover { background: var(--accent-gradient); color: white; }
+        
+        .page-header { text-align: center; margin-bottom: 60px; }
+        .page-header h1 { font-size: 3rem; font-weight: 900; margin-bottom: 16px; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-header p { font-size: 1.2rem; color: var(--text-muted); }
+        
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        
+        .tip-card { background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 36px; transition: var(--transition); }
+        .tip-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(245, 87, 108, 0.2); }
+        .tip-icon { width: 70px; height: 70px; background: var(--secondary-gradient); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 1.8rem; }
+        .tip-card h3 { font-size: 1.5rem; margin-bottom: 16px; }
+        .tip-card p { color: var(--text-muted); }
+        
+        .warning-box { background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 152, 0, 0.15) 100%); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: var(--border-radius); padding: 24px; margin: 30px 0; }
+        .warning-box h4 { color: #ffc107; display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .warning-box p { color: rgba(255, 255, 255, 0.9); }
+        
+        .checklist { list-style: none; }
+        .checklist li { padding: 16px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: flex-start; gap: 12px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist li i { color: var(--accent-green); margin-top: 4px; }
+        
+        footer { background: rgba(15, 15, 35, 0.8); backdrop-filter: blur(20px); border-top: 1px solid var(--glass-border); padding: 60px 0 30px; margin-top: 60px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-column h3 { font-size: 1.2rem; margin-bottom: 20px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 12px; }
+        .footer-column ul li a { color: var(--text-muted); transition: var(--transition); }
+        .footer-column ul li a:hover { color: var(--accent-pink); }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted); }
+        
+        @media (max-width: 768px) { .header-container { flex-direction: column; gap: 16px; } nav ul { flex-direction: column; } .page-header h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <div class="logo-text">
+                    <h1>电动车选购指南</h1>
+                    <p>⚡ 年轻人的出行神器</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="电动自行车选购与升级指南网站.html">首页</a></li>
+                    <li><a href="电动自行车选购与升级指南网站.html#buying-guide">选购指南</a></li>
+                    <li><a href="电动自行车选购与升级指南网站.html#upgrade-guide">升级改装</a></li>
+                    <li><a href="brands.html">品牌对比</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="content-wrapper">
+        <div class="container">
+            <a href="电动自行车选购与升级指南网站.html" class="back-home">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            
+            <div class="page-header">
+                <h1>🏍️ 电动车上牌与避坑指南</h1>
+                <p>选购电动车必看的10大要点，避免踩雷！</p>
+            </div>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🔋</div>
+                    <h3>电池类型选择</h3>
+                    <p>优先选择锂电池，轻便耐用但价格较高；铅酸电池便宜但笨重。根据通勤距离和使用频率选择合适容量。</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">⚡</div>
+                    <h3>续航里程核实</h3>
+                    <p>官方标称续航往往是最理想状态，实际续航会打7-8折。询问清楚电池真实容量，计算日常通勤是否够用。</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🛡️</div>
+                    <h3>刹车系统检查</h3>
+                    <p>前后碟刹 > 前碟后鼓 > 前后鼓刹。碟刹制动效果好，散热快，优先选择碟刹配置。</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🔧</div>
+                    <h3>售后服务重要</h3>
+                    <p>选择网点多的品牌，询问保修期限、电池保修政策、配件价格。售后服务好的品牌省心又省钱。</p>
+                </div>
+            </div>
+            
+            <div class="warning-box" id="legal">
+                <h4><i class="fas fa-exclamation-triangle"></i> 改装法律风险提示</h4>
+                <p>以下改装行为可能违法：解除限速、更换大容量电池、改装电机功率、加装遮阳伞等。违规改装可能导致无法上牌、事故责任加重、保险拒赔等后果。</p>
+            </div>
+            
+            <div class="tip-card">
+                <h3>🛒 购车检查清单</h3>
+                <ul class="checklist">
+                    <li><i class="fas fa-check"></i> 检查外观是否有划痕、掉漆</li>
+                    <li><i class="fas fa-check"></i> 试骑感受加速和刹车</li>
+                    <li><i class="fas fa-check"></i> 验证车架号与合格证一致</li>
+                    <li><i class="fas fa-check"></i> 确认电池生产日期（避免库存电池）</li>
+                    <li><i class="fas fa-check"></i> 索取正规发票和保修卡</li>
+                    <li><i class="fas fa-check"></i> 了解当地上牌政策和流程</li>
+                    <li><i class="fas fa-check"></i> 测试灯光、喇叭、仪表盘</li>
+                    <li><i class="fas fa-check"></i> 询问充电器和充电时间</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p style="color: var(--text-muted);">2026年最新最全的电动车选购指南平台</p>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="电动自行车选购与升级指南网站.html">🏠 首页</a></li>
+                        <li><a href="policy.html">📋 新国标政策</a></li>
+                        <li><a href="tips.html">🏍️ 上牌指南</a></li>
+                        <li><a href="brands.html">🏆 品牌对比</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 电动车选购指南 | 让出行更简单</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

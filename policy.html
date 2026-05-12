@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025新国标政策解读 | 电动车选购指南</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+        }
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --dark-bg: #0f0f23;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --accent-purple: #667eea;
+            --accent-pink: #f5576c;
+            --accent-cyan: #00f2fe;
+            --accent-green: #43e97b;
+            --border-radius: 20px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body {
+            background: var(--dark-bg);
+            background-image: 
+                radial-gradient(ellipse at top left, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(245, 87, 108, 0.2) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* 导航栏 */
+        header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--secondary-gradient);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .logo-icon i { color: white; font-size: 1.5rem; }
+        
+        .logo-text h1 {
+            font-size: 1.4rem;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        
+        .logo-text p { font-size: 0.75rem; color: var(--text-muted); }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+        }
+        
+        nav a {
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+        
+        nav a:hover, nav a.active {
+            color: white;
+            background: var(--glass-bg);
+        }
+        
+        nav a.active {
+            background: var(--secondary-gradient);
+        }
+        
+        /* 返回首页 */
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--glass-bg);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: var(--transition);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .back-home:hover {
+            background: var(--accent-gradient);
+            color: white;
+        }
+        
+        /* 内容区域 */
+        .content-wrapper {
+            padding: 140px 0 80px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+        
+        /* 政策卡片 */
+        .policy-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 36px;
+            margin-bottom: 30px;
+        }
+        
+        .policy-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .policy-card h2 i { color: var(--accent-cyan); }
+        
+        .policy-list {
+            list-style: none;
+        }
+        
+        .policy-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 12px;
+        }
+        
+        .policy-list li:last-child { border-bottom: none; }
+        
+        .policy-list li i { color: var(--accent-green); margin-top: 4px; }
+        
+        /* 警告框 */
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 152, 0, 0.15) 100%);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .warning-box h4 {
+            color: #ffc107;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        /* 链接按钮 */
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--glass-bg);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--accent-pink);
+            transition: var(--transition);
+            border: 1px solid rgba(245, 87, 108, 0.3);
+        }
+        
+        .link-btn:hover {
+            background: var(--secondary-gradient);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: rgba(15, 15, 35, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 12px; }
+        
+        .footer-column ul li a {
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+        
+        .footer-column ul li a:hover { color: var(--accent-pink); }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+        }
+        
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 16px; }
+            nav ul { flex-direction: column; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <div class="logo-text">
+                    <h1>电动车选购指南</h1>
+                    <p>⚡ 年轻人的出行神器</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="电动自行车选购与升级指南网站.html">首页</a></li>
+                    <li><a href="电动自行车选购与升级指南网站.html#buying-guide">选购指南</a></li>
+                    <li><a href="电动自行车选购与升级指南网站.html#upgrade-guide">升级改装</a></li>
+                    <li><a href="电动自行车选购与升级指南网站.html#brand-comparison">品牌对比</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="content-wrapper">
+        <div class="container">
+            <a href="电动自行车选购与升级指南网站.html" class="back-home">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            
+            <div class="page-header">
+                <h1>📋 2026年新国标政策解读</h1>
+                <p>了解最新政策，安全合规骑行</p>
+            </div>
+            
+            <div class="policy-card" id="ccc">
+                <h2><i class="fas fa-certificate"></i> CCC认证查询与验证</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">购买电动车前，务必查验CCC认证，避免买到无法上牌的车辆。</p>
+                <ul class="policy-list">
+                    <li><i class="fas fa-check"></i> 检查车身上的CCC认证标志</li>
+                    <li><i class="fas fa-check"></i> 登录国家认监委官网查询认证信息</li>
+                    <li><i class="fas fa-check"></i> 核对车架号与合格证是否一致</li>
+                    <li><i class="fas fa-check"></i> 确认电池规格与认证报告匹配</li>
+                </ul>
+            </div>
+            
+            <div class="policy-card">
+                <h2><i class="fas fa-file-contract"></i> 2026新国标核心要求</h2>
+                <ul class="policy-list">
+                    <li><i class="fas fa-check"></i> <strong>最高车速：</strong> ≤25km/h</li>
+                    <li><i class="fas fa-check"></i> <strong>整车质量：</strong> ≤55kg（含电池）</li>
+                    <li><i class="fas fa-check"></i> <strong>电机功率：</strong> ≤400W</li>
+                    <li><i class="fas fa-check"></i> <strong>电池电压：</strong> ≤48V</li>
+                    <li><i class="fas fa-check"></i> <strong>脚踏功能：</strong> 必须具备脚踏骑行能力</li>
+                    <li><i class="fas fa-check"></i> <strong>整车高度：</strong> ≤1100mm</li>
+                    <li><i class="fas fa-check"></i> <strong>车架宽度：</strong> ≤450mm</li>
+                    <li><i class="fas fa-check"></i> <strong>前后轮中心距：</strong> ≤1250mm</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> 重要提醒</h4>
+                <p>2026年起，部分地区将对超标电动车进行更严格的管控。建议购买符合新国标的电动车，避免后续上牌、年检等麻烦。</p>
+            </div>
+            
+            <div class="policy-card">
+                <h2><i class="fas fa-shield-alt"></i> 合法上牌要求</h2>
+                <ul class="policy-list">
+                    <li><i class="fas fa-check"></i> 车辆必须通过3C认证</li>
+                    <li><i class="fas fa-check"></i> 准备身份证、购车发票、合格证</li>
+                    <li><i class="fas fa-check"></i> 购买交强险（部分地区）</li>
+                    <li><i class="fas fa-check"></i> 到当地车管所或指定地点上牌</li>
+                </ul>
+                <a href="tips.html" class="link-btn" style="margin-top: 20px;">
+                    查看上牌详细指南 <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p style="color: var(--text-muted);">2026年最新最全的电动车选购指南平台</p>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="电动自行车选购与升级指南网站.html">🏠 首页</a></li>
+                        <li><a href="policy.html">📋 新国标政策</a></li>
+                        <li><a href="tips.html">🏍️ 上牌指南</a></li>
+                        <li><a href="brands.html">🏆 品牌对比</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 电动车选购指南 | 让出行更简单</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
