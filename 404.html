@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 页面未找到 | 电动车选购指南</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .not-found {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 24px;
+        }
+        .not-found-icon {
+            font-size: 6rem;
+            margin-bottom: 24px;
+            opacity: 0.8;
+        }
+        .not-found h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        .not-found p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .not-found-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+        .not-found-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .not-found-links .btn-primary {
+            background: var(--secondary-gradient);
+            color: white;
+            box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4);
+        }
+        .not-found-links .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(245, 87, 108, 0.5);
+        }
+        .not-found-links .btn-secondary {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+        }
+        .not-found-links .btn-secondary:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255,255,255,0.5);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="not-found">
+        <div class="not-found-icon">🔋</div>
+        <h1>404</h1>
+        <p>抱歉，这个页面好像没电了！你访问的页面不存在或已被移动。</p>
+        <div class="not-found-links">
+            <a href="index.html" class="btn-primary"><i class="fas fa-home"></i> 返回首页</a>
+            <a href="reviews.html" class="btn-secondary"><i class="fas fa-star"></i> 查看评测</a>
+        </div>
+    </div>
+</body>
+</html>

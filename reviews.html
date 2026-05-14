@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品牌评测 | 电动车选购指南</title>
+    <meta name="description" content="热门电动车品牌深度评测，真实用户体验，九号、雅迪、小牛等品牌实测报告">
+    <meta name="keywords" content="电动车评测,九号评测,雅迪评测,小牛评测,电动车测评,真实体验">
+    <meta name="author" content="电动车选购指南">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="品牌评测 | 电动车选购指南">
+    <meta property="og:description" content="热门电动车品牌深度评测，真实用户体验">
+    <meta property="og:url" content="https://rushbike.top/reviews.html">
+    <meta property="og:site_name" content="电动车选购指南">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .review-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 860px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+
+        .review-card {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(245, 175, 25, 0.5);
+            box-shadow: 0 20px 60px rgba(245, 175, 25, 0.15);
+        }
+
+        .review-card:hover::before {
+            opacity: 1;
+        }
+
+        .review-card-badge {
+            flex-shrink: 0;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .review-card-badge .badge-icon {
+            font-size: 2rem;
+            margin-bottom: 6px;
+        }
+
+        .review-card-badge .badge-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .review-card-badge .badge-score {
+            font-size: 0.78rem;
+            color: var(--text-dim, rgba(255,255,255,0.5));
+            margin-top: 2px;
+        }
+
+        .review-card-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .review-card-body h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover .review-card-body h3 {
+            background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .review-card-body .excerpt {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .review-card-meta {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .review-card-meta span {
+            font-size: 0.82rem;
+            color: var(--text-dim, rgba(255,255,255,0.5));
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .review-card-arrow {
+            flex-shrink: 0;
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.2);
+            transition: var(--transition);
+        }
+
+        .review-card:hover .review-card-arrow {
+            color: var(--accent-pink);
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 768px) {
+            .review-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                padding: 24px;
+            }
+            .review-card-badge {
+                min-width: auto;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .review-card-badge .badge-icon {
+                margin-bottom: 0;
+            }
+            .review-card-arrow {
+                align-self: flex-end;
+                margin-top: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <div class="logo-text">
+                    <h1>电动车选购指南</h1>
+                    <p>⚡ 年轻人的出行神器</p>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="reviews.html">评测</a></li>
+                    <li><a href="faq.html">常见问题</a></li>
+                    <li><a href="budget.html">预算推荐</a></li>
+                    <li><a href="upgrade.html">升级改装</a></li>
+                    <li><a href="brands.html">品牌对比</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>📝 品牌评测</h1>
+            <p>深度体验，真实感受，帮你找到最适合的电动车</p>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 40px;">
+        <!-- 广告位：评测列表顶部横幅 -->
+        <div class="ad-slot ad-banner" id="ad-reviews-top">
+            <div class="ad-placeholder"><i class="fas fa-ad"></i><span>广告位招商中</span></div>
+        </div>
+
+        <div class="review-list">
+
+            <a href="review-jiuhao.html" class="review-card">
+                <div class="review-card-badge">
+                    <div class="badge-icon">🥇</div>
+                    <div>
+                        <div class="badge-name">九号</div>
+                        <div class="badge-score">⭐ 4.8</div>
+                    </div>
+                </div>
+                <div class="review-card-body">
+                    <h3>九号Fz2 90：为极致智能花6000块，我究竟买到了什么？</h3>
+                    <p class="excerpt">三个月真实体验：无感智能解锁、TCS+ABS安全守护，重新定义城市通勤期待。一旦习惯，便成了再也回不去的日常。</p>
+                    <div class="review-card-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 2026年5月</span>
+                        <span><i class="fas fa-clock"></i> 约5分钟</span>
+                    </div>
+                </div>
+                <div class="review-card-arrow"><i class="fas fa-chevron-right"></i></div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8;">2026年最新最全的电动车选购指南平台，提供最新的政策解读、产品评测和技术指导。</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-zhihu"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">🏠 首页</a></li>
+                        <li><a href="reviews.html">📝 评测</a></li>
+                        <li><a href="faq.html">❓ 常见问题</a></li>
+                        <li><a href="budget.html">💰 预算推荐</a></li>
+                        <li><a href="upgrade.html">⚡ 升级改装</a></li>
+                        <li><a href="brands.html">🏆 品牌对比</a></li>
+                        <li><a href="maintenance.html">🛠️ 保养指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>政策与法律</h3>
+                    <ul>
+                        <li><a href="policy.html">📋 2026年新国标政策</a></li>
+                        <li><a href="tips.html">🏍️ 电动车上牌指南</a></li>
+                        <li><a href="upgrade.html">⚡ 改装法律风险提示</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8;">如有问题或合作意向，请通过以下方式联系我们：</p>
+                    <p style="margin-top: 14px; color: var(--text-muted);">
+                        📧 448274990@qq.com<br>
+                        📞 15627270915
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 电动车选购指南 | 让出行更简单</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+</body>
+</html>

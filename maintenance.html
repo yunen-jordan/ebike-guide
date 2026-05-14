@@ -32,52 +32,11 @@
     }
     </script>
     
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif; }
-        :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            --glass-bg: rgba(255, 255, 255, 0.15);
-            --glass-border: rgba(255, 255, 255, 0.3);
-            --dark-bg: #0f0f23;
-            --card-bg: rgba(255, 255, 255, 0.08);
-            --text-light: #ffffff;
-            --text-muted: rgba(255, 255, 255, 0.7);
-            --accent-pink: #f5576c;
-            --accent-cyan: #00f2fe;
-            --accent-green: #43e97b;
-            --border-radius: 20px;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        body { background: var(--dark-bg); background-image: radial-gradient(ellipse at top left, rgba(102, 126, 234, 0.3) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(245, 87, 108, 0.2) 0%, transparent 50%); background-attachment: fixed; color: var(--text-light); line-height: 1.8; min-height: 100vh; }
-        a { text-decoration: none; color: inherit; }
-        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
-        
-        header { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
-        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { width: 48px; height: 48px; background: var(--secondary-gradient); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
-        .logo-icon i { color: white; font-size: 1.5rem; }
-        .logo-text h1 { font-size: 1.4rem; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
-        .logo-text p { font-size: 0.75rem; color: var(--text-muted); }
-        nav ul { display: flex; list-style: none; gap: 8px; }
-        nav a { padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.95rem; color: var(--text-muted); transition: var(--transition); }
-        nav a:hover, nav a.active { color: white; background: var(--glass-bg); }
-        nav a.active { background: var(--secondary-gradient); box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4); }
-        
-        .mobile-menu-btn { display: none; background: var(--glass-bg); padding: 12px 16px; border-radius: 12px; font-size: 1.2rem; cursor: pointer; color: white; border: 1px solid var(--glass-border); }
-        
-        .breadcrumb { padding: 100px 0 20px; font-size: 0.9rem; color: var(--text-muted); }
-        .breadcrumb a { color: var(--accent-cyan); text-decoration: none; transition: var(--transition); }
-        .breadcrumb a:hover { color: white; }
-        .breadcrumb span { margin: 0 8px; }
-        
-        .page-header { background: linear-gradient(180deg, rgba(102, 126, 234, 0.2) 0%, rgba(245, 87, 108, 0.1) 50%, transparent 100%); padding: 140px 0 60px; text-align: center; }
-        .page-header h1 { font-size: 3rem; font-weight: 900; margin-bottom: 16px; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .page-header p { font-size: 1.2rem; color: var(--text-muted); }
+        /* 页面专属样式 - 保养指南 */
         
         .maintenance-section { padding: 60px 0 100px; }
         
@@ -112,23 +71,8 @@
         .season-item p { color: var(--text-muted); font-size: 0.95rem; }
         .season-item .icon { font-size: 2.5rem; margin-bottom: 12px; }
         
-        footer { background: rgba(15, 15, 35, 0.8); backdrop-filter: blur(20px); border-top: 1px solid var(--glass-border); padding: 60px 0 30px; margin-top: 60px; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .footer-column h3 { font-size: 1.2rem; margin-bottom: 20px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .footer-column ul { list-style: none; }
-        .footer-column li { margin-bottom: 12px; }
-        .footer-column a { color: var(--text-muted); transition: var(--transition); }
-        .footer-column a:hover { color: var(--accent-pink); }
-        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted); }
-        
+        /* 保养指南专属响应式 */
         @media (max-width: 768px) {
-            .header-container { flex-direction: column; gap: 16px; }
-            .mobile-menu-btn { display: block; position: absolute; right: 24px; top: 16px; }
-            nav { width: 100%; display: none; margin-top: 16px; }
-            nav.active { display: block; }
-            nav ul { flex-direction: column; gap: 8px; }
-            nav ul li a { display: block; padding: 14px 20px; border-radius: 12px; background: var(--card-bg); }
-            .page-header h1 { font-size: 2rem; }
             .maintenance-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -149,6 +93,7 @@
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">首页</a></li>
+                    <li><a href="reviews.html">评测</a></li>
                     <li><a href="faq.html">常见问题</a></li>
                     <li><a href="budget.html">预算推荐</a></li>
                     <li><a href="upgrade.html">升级改装</a></li>
@@ -285,25 +230,40 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>关于我们</h3>
-                    <p style="color: var(--text-muted);">专注于电动车选购指南平台</p>
+                    <p style="color: var(--text-muted); line-height: 1.8;">专注于电动车选购指南平台，提供最新的政策解读、产品评测和技术指导。</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-zhihu"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
                 <div class="footer-column">
                     <h3>快速链接</h3>
                     <ul>
                         <li><a href="index.html">🏠 首页</a></li>
+                        <li><a href="reviews.html">📝 评测</a></li>
                         <li><a href="faq.html">❓ 常见问题</a></li>
                         <li><a href="budget.html">💰 预算推荐</a></li>
                         <li><a href="upgrade.html">⚡ 升级改装</a></li>
                         <li><a href="brands.html">🏆 品牌对比</a></li>
                     </ul>
                 </div>
-                
+                <div class="footer-column">
+                    <h3>政策与法律</h3>
+                    <ul>
+                        <li><a href="policy.html">📋 2026年新国标政策</a></li>
+                        <li><a href="tips.html">🏍️ 电动车上牌指南</a></li>
+                        <li><a href="upgrade.html">⚡ 改装法律风险提示</a></li>
+                    </ul>
+                </div>
                 <div class="footer-column">
                     <h3>联系我们</h3>
-                    <ul>
-                        <li>📧 448274990@qq.com</li>
-                        <li>📞 15627270915</li>
-                    </ul>
+                    <p style="color: var(--text-muted); line-height: 1.8;">如有问题或合作意向，请通过以下方式联系我们：</p>
+                    <p style="margin-top: 14px; color: var(--text-muted);">
+                        📧 448274990@qq.com<br>
+                        📞 15627270915
+                    </p>
                 </div>
             </div>
             <div class="copyright">
@@ -312,11 +272,6 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            const nav = document.getElementById('mainNav');
-            nav.classList.toggle('active');
-        });
-    </script>
+    <script src="common.js"></script>
 </body>
 </html>
