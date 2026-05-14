@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电动车保养指南 | 电动自行车选购与升级指南</title>
+    <meta name="description" content="电动车电池保养、轮胎维护、日常使用注意事项，延长爱车使用寿命的实用技巧">
+    <meta name="keywords" content="电动车保养,电动车电池保养,电动车轮胎维护,电动车日常使用,延长电动车寿命">
+    <meta name="author" content="电动车选购指南">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="电动车保养指南 | 电动自行车选购与升级指南">
+    <meta property="og:description" content="电动车电池保养、轮胎维护、日常使用注意事项">
+    <meta property="og:url" content="https://rushbike.top/maintenance.html">
+    <meta property="og:site_name" content="电动车选购指南">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "电动车保养指南",
+      "description": "电动车电池保养、轮胎维护、日常使用注意事项",
+      "author": {
+        "@type": "Organization",
+        "name": "电动车选购指南"
+      },
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-05-13"
+    }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif; }
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --dark-bg: #0f0f23;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --accent-pink: #f5576c;
+            --accent-cyan: #00f2fe;
+            --accent-green: #43e97b;
+            --border-radius: 20px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        body { background: var(--dark-bg); background-image: radial-gradient(ellipse at top left, rgba(102, 126, 234, 0.3) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(245, 87, 108, 0.2) 0%, transparent 50%); background-attachment: fixed; color: var(--text-light); line-height: 1.8; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; }
+        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        
+        header { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 48px; height: 48px; background: var(--secondary-gradient); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon i { color: white; font-size: 1.5rem; }
+        .logo-text h1 { font-size: 1.4rem; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        .logo-text p { font-size: 0.75rem; color: var(--text-muted); }
+        nav ul { display: flex; list-style: none; gap: 8px; }
+        nav a { padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.95rem; color: var(--text-muted); transition: var(--transition); }
+        nav a:hover, nav a.active { color: white; background: var(--glass-bg); }
+        nav a.active { background: var(--secondary-gradient); box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4); }
+        
+        .mobile-menu-btn { display: none; background: var(--glass-bg); padding: 12px 16px; border-radius: 12px; font-size: 1.2rem; cursor: pointer; color: white; border: 1px solid var(--glass-border); }
+        
+        .breadcrumb { padding: 100px 0 20px; font-size: 0.9rem; color: var(--text-muted); }
+        .breadcrumb a { color: var(--accent-cyan); text-decoration: none; transition: var(--transition); }
+        .breadcrumb a:hover { color: white; }
+        .breadcrumb span { margin: 0 8px; }
+        
+        .page-header { background: linear-gradient(180deg, rgba(102, 126, 234, 0.2) 0%, rgba(245, 87, 108, 0.1) 50%, transparent 100%); padding: 140px 0 60px; text-align: center; }
+        .page-header h1 { font-size: 3rem; font-weight: 900; margin-bottom: 16px; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-header p { font-size: 1.2rem; color: var(--text-muted); }
+        
+        .maintenance-section { padding: 60px 0 100px; }
+        
+        .maintenance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
+        
+        .maintenance-card { background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 36px; transition: var(--transition); }
+        .maintenance-card:hover { transform: translateY(-8px); border-color: rgba(102, 126, 234, 0.5); }
+        
+        .card-icon { width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 2rem; }
+        .card-icon.battery { background: var(--secondary-gradient); }
+        .card-icon.tire { background: var(--accent-gradient); }
+        .card-icon.brake { background: var(--success-gradient); }
+        .card-icon.motor { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+        .card-icon.clean { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        
+        .maintenance-card h2 { font-size: 1.5rem; margin-bottom: 16px; }
+        .maintenance-card > p { color: var(--text-muted); margin-bottom: 24px; }
+        
+        .tips-list { list-style: none; }
+        .tips-list li { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .tips-list li:last-child { border-bottom: none; }
+        .tips-list li i { color: var(--accent-green); margin-top: 4px; }
+        
+        .warning-box { background: rgba(255, 193, 7, 0.15); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 16px 20px; margin-top: 20px; }
+        .warning-box p { color: #ffc107; margin: 0; display: flex; align-items: center; gap: 10px; }
+        
+        .season-guide { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 40px; margin-top: 60px; }
+        .season-guide h2 { font-size: 1.8rem; margin-bottom: 30px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .season-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .season-item { background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 24px; text-align: center; }
+        .season-item h3 { font-size: 1.2rem; margin-bottom: 12px; }
+        .season-item p { color: var(--text-muted); font-size: 0.95rem; }
+        .season-item .icon { font-size: 2.5rem; margin-bottom: 12px; }
+        
+        footer { background: rgba(15, 15, 35, 0.8); backdrop-filter: blur(20px); border-top: 1px solid var(--glass-border); padding: 60px 0 30px; margin-top: 60px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-column h3 { font-size: 1.2rem; margin-bottom: 20px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+        .footer-column a { color: var(--text-muted); transition: var(--transition); }
+        .footer-column a:hover { color: var(--accent-pink); }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted); }
+        
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 16px; }
+            .mobile-menu-btn { display: block; position: absolute; right: 24px; top: 16px; }
+            nav { width: 100%; display: none; margin-top: 16px; }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; gap: 8px; }
+            nav ul li a { display: block; padding: 14px 20px; border-radius: 12px; background: var(--card-bg); }
+            .page-header h1 { font-size: 2rem; }
+            .maintenance-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <div class="logo-text">
+                    <h1>电动车选购指南</h1>
+                    <p>⚡ 年轻人的出行神器</p>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="faq.html">常见问题</a></li>
+                    <li><a href="budget.html">预算推荐</a></li>
+                    <li><a href="upgrade.html">升级改装</a></li>
+                    <li><a href="brands.html">品牌对比</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 面包屑导航 -->
+    <div class="container">
+        <div class="breadcrumb" style="padding-top: 100px;">
+            <a href="index.html">首页</a>
+            <span>></span>
+            <span>保养指南</span>
+        </div>
+    </div>
+    
+    <section class="page-header">
+        <div class="container">
+            <h1>🛠️ 电动车保养指南</h1>
+            <p>掌握正确的保养方法，让您的电动车多用5年！</p>
+        </div>
+    </section>
+    
+    <section class="maintenance-section">
+        <div class="container">
+            <div class="maintenance-grid">
+                <!-- 电池保养 -->
+                <div class="maintenance-card">
+                    <div class="card-icon battery"><i class="fas fa-battery-full"></i></div>
+                    <h2>🔋 电池保养</h2>
+                    <p>电池是电动车最核心的部件，正确保养可延长50%寿命！</p>
+                    <ul class="tips-list">
+                        <li><i class="fas fa-check-circle"></i><span><strong>浅充浅放：</strong>锂电池建议电量在20%-80%之间使用，避免过充过放</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>避免高温：</strong>充电时避免阳光直射，夏季尤其注意，理想温度15-25°C</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>定期使用：</strong>如果长期不用，每个月至少完整充放电一次</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>原装充电器：</strong>使用原装充电器，混用可能损伤电池</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>充满及时拔：</strong>铅酸电池充满后及时拔掉，避免过充</span></li>
+                    </ul>
+                    <div class="warning-box">
+                        <p><i class="fas fa-exclamation-triangle"></i> 锂电池起火风险高，充电时务必有人在场！</p>
+                    </div>
+                </div>
+                
+                <!-- 轮胎保养 -->
+                <div class="maintenance-card">
+                    <div class="card-icon tire"><i class="fas fa-circle-notch"></i></div>
+                    <h2>🛞 轮胎保养</h2>
+                    <p>轮胎状态直接影响骑行安全和续航里程！</p>
+                    <ul class="tips-list">
+                        <li><i class="fas fa-check-circle"></i><span><strong>保持胎压：</strong>每月检查一次胎压，标准胎压可降低耗电、提升续航</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>定期检查：</strong>检查轮胎花纹深度，低于1.6mm需更换</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>避免超载：</strong>不要长时间载重超过车辆规定载重</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>远离尖锐物：</strong>骑行时避开玻璃、钉子等尖锐物品</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>真空胎好处多：</strong>真空胎扎钉后不易快速漏气，还能继续骑行到维修点</span></li>
+                    </ul>
+                </div>
+                
+                <!-- 刹车保养 -->
+                <div class="maintenance-card">
+                    <div class="card-icon brake"><i class="fas fa-hand-paper"></i></div>
+                    <h2>🛑 刹车保养</h2>
+                    <p>刹车是保命的关键部件，务必保持最佳状态！</p>
+                    <ul class="tips-list">
+                        <li><i class="fas fa-check-circle"></i><span><strong>定期检查：</strong>每周检查刹车片厚度，低于3mm需更换</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>保持清洁：</strong>清理刹车片上的异物，避免刹车时产生噪音</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>碟刹保养：</strong>碟刹如有异响，可能是需要清洁或调整</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>避免急刹：</strong>提前减速，缓慢刹车，减少磨损</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>专业调整：</strong>刹车行程变大时，及时到专业店调整</span></li>
+                    </ul>
+                </div>
+                
+                <!-- 电机保养 -->
+                <div class="maintenance-card">
+                    <div class="card-icon motor"><i class="fas fa-cog"></i></div>
+                    <h2>⚙️ 电机保养</h2>
+                    <p>电机是电动车的心脏，日常使用需注意保护</p>
+                    <ul class="tips-list">
+                        <li><i class="fas fa-check-circle"></i><span><strong>防水防潮：</strong>电机防水但非完全防水，避免深度涉水</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>避免过载：</strong>不要长时间在陡坡路段高功率运行</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>异响检查：</strong>电机如有明显异响，需及时检修</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>定期润滑：</strong>每半年到专业店进行一次全面保养</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>专业维修：</strong>电机故障请找专业维修，不要自行拆解</span></li>
+                    </ul>
+                </div>
+                
+                <!-- 日常清洁 -->
+                <div class="maintenance-card">
+                    <div class="card-icon clean"><i class="fas fa-spray-can"></i></div>
+                    <h2>✨ 日常清洁</h2>
+                    <p>保持车辆清洁不仅是美观，更能延长使用寿命</p>
+                    <ul class="tips-list">
+                        <li><i class="fas fa-check-circle"></i><span><strong>避免高压水枪：</strong>直接用水枪冲洗可能损坏电子元件</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>湿布擦拭：</strong>用湿布配合中性清洁剂擦拭车身</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>链条保养：</strong>有链条的车型需定期清洁和润滑链条</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>防水处理：</strong>充电口、显示屏等部位可用防尘罩保护</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>车棚停车：</strong>尽量停在有遮挡的地方，避免长期日晒雨淋</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 四季保养指南 -->
+            <div class="season-guide">
+                <h2>📅 四季保养重点</h2>
+                <div class="season-grid">
+                    <div class="season-item">
+                        <div class="icon">🌸</div>
+                        <h3>春季</h3>
+                        <p>经过冬季闲置，全面检查电池、轮胎、刹车状态；春季多雨，注意防水</p>
+                    </div>
+                    <div class="season-item">
+                        <div class="icon">☀️</div>
+                        <h3>夏季</h3>
+                        <p>避免高温充电，防止暴晒；雨季检查防水；胎压可略低于标准值</p>
+                    </div>
+                    <div class="season-item">
+                        <div class="icon">🍂</div>
+                        <h3>秋季</h3>
+                        <p>换季保养的好时机，全面检查各部件；为冬季做准备</p>
+                    </div>
+                    <div class="season-item">
+                        <div class="icon">❄️</div>
+                        <h3>冬季</h3>
+                        <p>电池性能下降，续航减少20-30%属正常；充电时间可适当延长</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p style="color: var(--text-muted);">专注于电动车选购指南平台</p>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">🏠 首页</a></li>
+                        <li><a href="faq.html">❓ 常见问题</a></li>
+                        <li><a href="budget.html">💰 预算推荐</a></li>
+                        <li><a href="upgrade.html">⚡ 升级改装</a></li>
+                        <li><a href="brands.html">🏆 品牌对比</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li>📧 448274990@qq.com</li>
+                        <li>📞 15627270915</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 电动车选购指南. 版权所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

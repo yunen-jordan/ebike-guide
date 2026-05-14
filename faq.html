@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见问题 FAQ | 电动自行车选购与升级指南</title>
+    <meta name="description" content="电动车常见问题解答，涵盖上牌流程、续航疑问、电池保养、改装规定等热点问题">
+    <meta name="keywords" content="电动车FAQ,电动车上牌,电动车续航,电动车电池保养,电动车改装规定">
+    <meta name="author" content="电动车选购指南">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="常见问题 FAQ | 电动自行车选购与升级指南">
+    <meta property="og:description" content="电动车常见问题解答，涵盖上牌流程、续航疑问、电池保养等热点问题">
+    <meta property="og:url" content="https://rushbike.top/faq.html">
+    <meta property="og:site_name" content="电动车选购指南">
+    
+    <!-- Schema.org FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": []
+    }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+        }
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --dark-bg: #0f0f23;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --accent-purple: #667eea;
+            --accent-pink: #f5576c;
+            --accent-cyan: #00f2fe;
+            --accent-green: #43e97b;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --border-radius: 20px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body {
+            background: var(--dark-bg);
+            background-image: 
+                radial-gradient(ellipse at top left, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(245, 87, 108, 0.2) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* 导航栏 */
+        header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--secondary-gradient);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+        }
+        
+        .logo-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.4rem;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+        
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+        }
+        
+        nav a {
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+        
+        nav a:hover, nav a.active {
+            color: white;
+            background: var(--glass-bg);
+        }
+        
+        nav a.active {
+            background: var(--secondary-gradient);
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: var(--glass-bg);
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: white;
+            border: 1px solid var(--glass-border);
+        }
+        
+        /* 页面标题 */
+        .page-header {
+            background: linear-gradient(180deg, 
+                rgba(102, 126, 234, 0.2) 0%, 
+                rgba(245, 87, 108, 0.1) 50%,
+                transparent 100%);
+            padding: 140px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* FAQ 样式 */
+        .faq-section {
+            padding: 60px 0 100px;
+        }
+        
+        .faq-category {
+            margin-bottom: 60px;
+        }
+        
+        .faq-category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .faq-item {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            border-color: rgba(102, 126, 234, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 24px 30px;
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .faq-question i {
+            color: var(--accent-cyan);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 30px 24px;
+            color: var(--text-muted);
+            line-height: 1.9;
+        }
+        
+        .faq-answer-content ul {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+        
+        .faq-answer-content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: rgba(102, 126, 234, 0.15);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+        
+        .highlight-box.warning {
+            background: rgba(255, 193, 7, 0.15);
+            border-color: rgba(255, 193, 7, 0.3);
+        }
+        
+        .highlight-box p {
+            margin: 0;
+        }
+        
+        /* 页脚 */
+        footer {
+            background: rgba(15, 15, 35, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column a {
+            color: var(--text-muted);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent-pink);
+            transform: translateX(6px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                right: 24px;
+                top: 16px;
+            }
+            
+            nav {
+                width: 100%;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 14px 20px;
+                border-radius: 12px;
+                background: var(--card-bg);
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .faq-question {
+                font-size: 1rem;
+                padding: 20px;
+            }
+            
+            .faq-answer-content {
+                padding: 0 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>电动车选购指南</h1>
+                    <p>⚡ 年轻人的出行神器</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="faq.html" class="active">常见问题</a></li>
+                    <li><a href="budget.html">预算推荐</a></li>
+                    <li><a href="upgrade.html">升级改装</a></li>
+                    <li><a href="brands.html">品牌对比</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 面包屑导航 -->
+    <div class="container">
+        <div class="breadcrumb" style="padding-top: 100px;">
+            <a href="index.html">首页</a>
+            <span>></span>
+            <span>常见问题</span>
+        </div>
+    </div>
+    
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>❓ 常见问题 FAQ</h1>
+            <p>关于电动车选购、上牌、使用中最常被问到的问题，答案都在这里！</p>
+        </div>
+    </section>
+    
+    <!-- FAQ 内容 -->
+    <section class="faq-section">
+        <div class="container">
+            <!-- 上牌相关 -->
+            <div class="faq-category" id="registration">
+                <h2 class="faq-category-title"><i class="fas fa-clipboard-check"></i> 上牌相关</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>电动自行车需要上牌吗？需要什么材料？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>是的，电动自行车必须上牌才能合法上路。</strong>根据新国标规定，所有电动自行车都需要办理登记上牌。</p>
+                            <p><strong>所需材料：</strong></p>
+                            <ul>
+                                <li>本人身份证原件</li>
+                                <li>购车发票（电子发票也可）</li>
+                                <li>车辆合格证</li>
+                                <li>CCC认证证书（2019年后生产的必须）</li>
+                            </ul>
+                            <div class="highlight-box warning">
+                                <p><strong>⚠️ 注意：</strong>如果发票遗失，部分地区可使用声明书替代，具体以当地政策为准。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>上牌费用是多少？需要多久？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>上牌费用：</strong>一般在 20-50 元之间，部分地区免费。具体包括：</p>
+                            <ul>
+                                <li>行驶证工本费：约 10-15 元</li>
+                                <li>车牌费用：约 10-35 元</li>
+                                <li>部分城市可能收取拓印费：约 5-10 元</li>
+                            </ul>
+                            <p><strong>办理时间：</strong></p>
+                            <ul>
+                                <li>车管所办理：约 1-2 小时</li>
+                                <li>电动车上牌点/4S店代办：当天可取</li>
+                                <li>网上预约+邮政寄递：3-5 个工作日</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>外地买的电动车可以在本地 上牌吗？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>可以。</strong>只要车辆符合本地的新国标要求，就可以在本地车管所办理上牌。</p>
+                            <div class="highlight-box">
+                                <p><strong>💡 建议：</strong>购买前先查询当地的上牌目录，确认车辆在目录内再购买，避免无法上牌。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 续航与电池 -->
+            <div class="faq-category" id="battery">
+                <h2 class="faq-category-title"><i class="fas fa-battery-full"></i> 续航与电池</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>电动车续航里程是怎么计算的？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>续航里程通常是在<strong>理想条件下</strong>（平路、匀速、负载75kg、气温25°C）测试得出的，实际续航会受以下因素影响：</p>
+                            <ul>
+                                <li><strong>骑行速度：</strong>速度越快，耗电越大，续航越短</li>
+                                <li><strong>路面情况：</strong>上坡、逆风、颠簸路面都会增加耗电</li>
+                                <li><strong>载重：</strong>负载越重，耗电越快</li>
+                                <li><strong>气温：</strong>低温会降低电池性能，续航减少 20-30%</li>
+                                <li><strong>驾驶习惯：</strong>频繁急加速/刹车会增加耗电</li>
+                            </ul>
+                            <p><strong>实际续航 ≈ 标称续航 × 0.7 ~ 0.8</strong></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>铅酸电池和锂电池哪个更好？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>两种电池各有优势，选择取决于您的需求：</p>
+                            <p><strong>铅酸电池：</strong></p>
+                            <ul>
+                                <li>✅ 成本低，价格是锂电池的 1/3~1/2</li>
+                                <li>✅ 安全性高，不易起火</li>
+                                <li>✅ 回收价值高</li>
+                                <li>❌ 重量大，是锂电池的 3-4 倍</li>
+                                <li>❌ 寿命短，一般 300-500 次循环</li>
+                                <li>❌ 续航相对较短</li>
+                            </ul>
+                            <p><strong>锂电池：</strong></p>
+                            <ul>
+                                <li>✅ 重量轻，便于提取充电</li>
+                                <li>✅ 寿命长，800-1000 次循环</li>
+                                <li>✅ 续航更远</li>
+                                <li>❌ 成本高</li>
+                                <li>❌ 需要注意充电安全</li>
+                            </ul>
+                            <p><strong>建议：</strong>日常短途通勤选铅酸；需要提取电池充电或长续航选锂电池。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>电池需要每次都充满吗？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>锂电池：</strong>建议浅充浅放，电量在 20%-80% 之间使用最佳，有利于延长寿命。充满电后及时拔掉充电器。</p>
+                            <p><strong>铅酸电池：</strong>建议每次充到 100%，因为铅酸电池没有记忆效应。但也要避免过充，建议使用智能充电器。</p>
+                            <div class="highlight-box warning">
+                                <p><strong>⚠️ 重要：</strong>无论哪种电池，充电时都应有人在旁边，避免长时间无人看管的充电。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 新国标相关 -->
+            <div class="faq-category" id="policy">
+                <h2 class="faq-category-title"><i class="fas fa-file-contract"></i> 新国标相关</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>新国标对电动自行车有哪些要求？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>2026年新国标核心要求：</strong></p>
+                            <ul>
+                                <li><strong>最高车速：</strong>≤ 25 km/h</li>
+                                <li><strong>整车质量：</strong>≤ 55 kg（含电池）</li>
+                                <li><strong>电机功率：</strong>≤ 400 W</li>
+                                <li><strong>电池电压：</strong>≤ 48 V</li>
+                                <li><strong>脚踏骑行：</strong>必须具备</li>
+                                <li><strong>CCC认证：</strong>必须通过</li>
+                                <li><strong>前后灯：</strong>必须配备</li>
+                                <li><strong>鸣号装置：</strong>必须配备</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>超过国标的车算什么？需要什么驾照？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>电动轻便摩托车：</strong></p>
+                            <ul>
+                                <li>车速：25-50 km/h</li>
+                                <li>需要 F 证（轻便摩托车驾照）</li>
+                                <li>需要上摩托车蓝牌</li>
+                                <li>不能载人</li>
+                            </ul>
+                            <p><strong>电动摩托车：</strong></p>
+                            <ul>
+                                <li>车速：> 50 km/h</li>
+                                <li>需要 E 证（普通摩托车驾照）或 D 证</li>
+                                <li>需要上摩托车黄牌</li>
+                                <li>可载一名成年人</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 日常使用 -->
+            <div class="faq-category" id="usage">
+                <h2 class="faq-category-title"><i class="fas fa-bicycle"></i> 日常使用</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>电动车能载人吗？有什么规定？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>电动自行车：</strong></p>
+                            <ul>
+                                <li>✅ 可以载一名 12 岁以下儿童</li>
+                                <li>✅ 骑行者必须年满 16 岁</li>
+                                <li>✅ 双方都必须佩戴头盔</li>
+                            </ul>
+                            <p><strong>电动轻便摩托车：</strong></p>
+                            <ul>
+                                <li>❌ 不能载人</li>
+                            </ul>
+                            <p><strong>电动摩托车：</strong></p>
+                            <ul>
+                                <li>✅ 可以载一名成年人</li>
+                                <li>✅ 骑行者必须年满 18 岁并持有 E/D 证</li>
+                                <li>✅ 双方都必须佩戴头盔</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>电动车需要佩戴头盔吗？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>必须佩戴头盔！</strong></p>
+                            <p>根据《道路交通安全法》和各省市相关规定：</p>
+                            <ul>
+                                <li>骑乘电动自行车必须佩戴安全头盔</li>
+                                <li>骑乘电动摩托车必须佩戴安全头盔</li>
+                                <li>违规可能被罚款 20-50 元</li>
+                            </ul>
+                            <div class="highlight-box warning">
+                                <p><strong>⚠️ 安全提示：</strong>头盔是保命的关键！发生事故时，正确佩戴头盔可将头部受伤风险降低 70% 以上。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>电动车充一次电需要多少度电？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>充电量取决于电池容量：</p>
+                            <ul>
+                                <li><strong>48V12Ah 铅酸：</strong>约 0.6 度电</li>
+                                <li><strong>48V20Ah 铅酸：</strong>约 1 度电</li>
+                                <li><strong>48V20Ah 锂电：</strong>约 1 度电</li>
+                                <li><strong>60V20Ah 锂电：</strong>约 1.2 度电</li>
+                            </ul>
+                            <p><strong>电费计算：</strong>按家庭电价 0.5 元/度，每次充电费用约 0.3-0.7 元。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 改装相关 -->
+            <div class="faq-category" id="modification">
+                <h2 class="faq-category-title"><i class="fas fa-tools"></i> 改装相关</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>哪些改装是合法的？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>✅ 合法改装：</strong></p>
+                            <ul>
+                                <li>加装后视镜、头盔锁、手机支架</li>
+                                <li>更换更舒适的坐垫</li>
+                                <li>加装防盗报警器</li>
+                                <li>更换 LED 大灯（亮度不超标）</li>
+                                <li>加装转向灯（需符合规定）</li>
+                                <li>安装后备箱/储物箱</li>
+                            </ul>
+                            <p><strong>⚠️ 需要备案的改装：</strong></p>
+                            <ul>
+                                <li>加装保险杠（需到车管所备案）</li>
+                                <li>加装儿童座椅（需备案）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>解除限速会被处罚吗？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>是的，解除限速是违法行为！</strong></p>
+                            <ul>
+                                <li>解除限速属于<strong>非法改装</strong></li>
+                                <li>被查到可处 <strong>200-500 元罚款</strong></li>
+                                <li>可能要求<strong>恢复原状</strong></li>
+                                <li>发生事故时，保险公司可能<strong>拒绝理赔</strong></li>
+                            </ul>
+                            <div class="highlight-box warning">
+                                <p><strong>⚠️ 重要提醒：</strong>超速行驶本身就是违法行为，且对自己和他人的安全都不负责任。请遵守交规，安全出行！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8;">我们是一个专注于电动车选购、使用和升级的指南平台，提供最新的政策解读、产品评测和技术指导。</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">🏠 首页</a></li>
+                        <li><a href="faq.html">❓ 常见问题</a></li>
+                        <li><a href="budget.html">💰 预算推荐</a></li>
+                        <li><a href="upgrade.html">⚡ 升级改装</a></li>
+                        <li><a href="brands.html">🏆 品牌对比</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>帮助与支持</h3>
+                    <ul>
+                        <li><a href="#registration">📋 上牌相关</a></li>
+                        <li><a href="#battery">🔋 续航电池</a></li>
+                        <li><a href="#policy">📜 新国标</a></li>
+                        <li><a href="#usage">🚴 日常使用</a></li>
+                        <li><a href="#modification">🔧 改装规定</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li>📧 448274990@qq.com</li>
+                        <li>📞 15627270915</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026 电动车选购指南. 版权所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        });
+        
+        // FAQ 手风琴功能
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // 关闭所有其他 FAQ
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // 切换当前 FAQ
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

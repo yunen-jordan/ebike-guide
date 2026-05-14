@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://starlit-kangaroo-3b9ff1.netlify.app/sitemap.xml

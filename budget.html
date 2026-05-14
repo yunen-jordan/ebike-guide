@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预算选购推荐 | 电动自行车选购与升级指南</title>
+    <meta name="description" content="根据不同预算推荐最值得购买的电动车，1000-3000元、3000-5000元、5000元以上各价位段精选车型推荐">
+    <meta name="keywords" content="电动车预算,1000元电动车,3000元电动车,5000元电动车,电动车推荐,性价比电动车">
+    <meta name="author" content="电动车选购指南">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="预算选购推荐 | 电动自行车选购与升级指南">
+    <meta property="og:description" content="根据不同预算推荐最值得购买的电动车，各价位段精选车型推荐">
+    <meta property="og:url" content="https://rushbike.top/budget.html">
+    <meta property="og:site_name" content="电动车选购指南">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "预算选购推荐 | 电动自行车选购与升级指南",
+      "description": "根据不同预算推荐最值得购买的电动车",
+      "author": {
+        "@type": "Organization",
+        "name": "电动车选购指南"
+      },
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-05-13"
+    }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif; }
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --warning-gradient: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --dark-bg: #0f0f23;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --accent-pink: #f5576c;
+            --accent-cyan: #00f2fe;
+            --accent-green: #43e97b;
+            --border-radius: 20px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body {
+            background: var(--dark-bg);
+            background-image: radial-gradient(ellipse at top left, rgba(102, 126, 234, 0.3) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(245, 87, 108, 0.2) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        
+        /* 导航栏 */
+        header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 48px; height: 48px; background: var(--secondary-gradient); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon i { color: white; font-size: 1.5rem; }
+        .logo-text h1 { font-size: 1.4rem; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        .logo-text p { font-size: 0.75rem; color: var(--text-muted); }
+        
+        nav ul { display: flex; list-style: none; gap: 8px; }
+        nav a { padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.95rem; color: var(--text-muted); transition: var(--transition); }
+        nav a:hover, nav a.active { color: white; background: var(--glass-bg); }
+        nav a.active { background: var(--secondary-gradient); box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4); }
+        
+        /* 面包屑导航 */
+        .breadcrumb { padding: 100px 0 20px; font-size: 0.9rem; color: var(--text-muted); }
+        .breadcrumb a { color: var(--accent-cyan); text-decoration: none; transition: var(--transition); }
+        .breadcrumb a:hover { color: white; }
+        .breadcrumb span { margin: 0 8px; }
+        
+        /* 页面标题 */
+        .page-header {
+            background: linear-gradient(180deg, rgba(102, 126, 234, 0.2) 0%, rgba(245, 87, 108, 0.1) 50%, transparent 100%);
+            padding: 40px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 { font-size: 3rem; font-weight: 900; margin-bottom: 16px; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-header p { font-size: 1.2rem; color: var(--text-muted); }
+        
+        /* 预算区间选择 */
+        .budget-selector {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .budget-tab {
+            padding: 16px 32px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        
+        .budget-tab:hover { background: rgba(102, 126, 234, 0.3); transform: translateY(-3px); }
+        .budget-tab.active { background: var(--secondary-gradient); border-color: transparent; box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4); }
+        
+        /* 产品卡片 */
+        .products-section { padding: 20px 0 80px; }
+        
+        .budget-content { display: none; }
+        .budget-content.active { display: block; animation: fadeIn 0.5s ease; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .budget-intro {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .budget-intro h2 { font-size: 1.8rem; margin-bottom: 16px; }
+        
+        .budget-intro ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .budget-intro li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+        }
+        
+        .budget-intro li i { color: var(--accent-green); }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover { transform: translateY(-10px); border-color: rgba(245, 87, 108, 0.5); box-shadow: 0 20px 50px rgba(245, 87, 108, 0.2); }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .product-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .product-badge.hot { background: var(--secondary-gradient); }
+        .product-badge.new { background: var(--accent-gradient); }
+        .product-badge.value { background: var(--success-gradient); }
+        
+        .product-content { padding: 24px; }
+        .product-content h3 { font-size: 1.4rem; margin-bottom: 12px; }
+        .product-content p { color: var(--text-muted); margin-bottom: 20px; }
+        
+        .product-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .spec-item {
+            text-align: center;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+        
+        .spec-value { font-size: 1.2rem; font-weight: 700; color: var(--accent-cyan); }
+        .spec-label { font-size: 0.8rem; color: var(--text-muted); }
+        
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+        
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tag {
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        .product-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: var(--secondary-gradient);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .product-btn:hover { transform: scale(1.02); box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4); }
+        
+        /* 选购建议 */
+        .tips-section {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-top: 60px;
+        }
+        
+        .tips-section h2 { font-size: 1.8rem; margin-bottom: 24px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .tip-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        
+        .tip-card h3 { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; margin-bottom: 12px; }
+        .tip-card h3 i { color: var(--accent-cyan); }
+        .tip-card p { color: var(--text-muted); }
+        
+        /* 页脚 */
+        footer { background: rgba(15, 15, 35, 0.8); backdrop-filter: blur(20px); border-top: 1px solid var(--glass-border); padding: 60px 0 30px; margin-top: 60px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-column h3 { font-size: 1.2rem; margin-bottom: 20px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+        .footer-column a { color: var(--text-muted); transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+        .footer-column a:hover { color: var(--accent-pink); transform: translateX(6px); }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted); }
+        
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 16px; }
+            .page-header h1 { font-size: 2rem; }
+            .budget-selector { gap: 10px; }
+            .budget-tab { padding: 12px 20px; font-size: 0.9rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .product-specs { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <div class="logo-text">
+                    <h1>电动车选购指南</h1>
+                    <p>⚡ 年轻人的出行神器</p>
+                </div>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="faq.html">常见问题</a></li>
+                    <li><a href="budget.html" class="active">预算推荐</a></li>
+                    <li><a href="upgrade.html">升级改装</a></li>
+                    <li><a href="brands.html">品牌对比</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 面包屑导航 -->
+    <div class="container">
+        <div class="breadcrumb" style="padding-top: 100px;">
+            <a href="index.html">首页</a>
+            <span>></span>
+            <span>预算推荐</span>
+        </div>
+    </div>
+    
+    <section class="page-header">
+        <div class="container">
+            <h1>💰 预算选购推荐</h1>
+            <p>根据您的预算，找到最适合自己的电动车！精选各价位段高性价比车型</p>
+        </div>
+    </section>
+    
+    <section class="container products-section">
+        <!-- 预算区间选择 -->
+        <div class="budget-selector">
+            <button class="budget-tab active" data-budget="entry">💵 1000-3000元<br><small>入门首选</small></button>
+            <button class="budget-tab" data-budget="mid">🎯 3000-5000元<br><small>性价比之王</small></button>
+            <button class="budget-tab" data-budget="high">👑 5000元以上<br><small>旗舰体验</small></button>
+        </div>
+        
+        <!-- 入门级 1000-3000元 -->
+        <div class="budget-content active" id="entry">
+            <div class="budget-intro">
+                <h2>💵 入门级 | 1000-3000元</h2>
+                <p>适合学生党、短途通勤、日常代步。满足基本出行需求，性价比极高。</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> 续航 40-60km</li>
+                    <li><i class="fas fa-check"></i> 铅酸电池为主</li>
+                    <li><i class="fas fa-check"></i> 基本智能功能</li>
+                    <li><i class="fas fa-check"></i> 适合校园/社区</li>
+                </ul>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image"><i class="fas fa-bicycle"></i></div>
+                    <div class="product-content">
+                        <span class="product-badge value">性价比之选</span>
+                        <h3>雅迪 尚蝶/小金果</h3>
+                        <p>入门级明星产品，口碑好，售后服务网点多，新手首选</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <div class="spec-value">60km</div>
+                                <div class="spec-label">续航</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">48V</div>
+                                <div class="spec-label">电压</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">12Ah</div>
+                                <div class="spec-label">电池</div>
+                            </div>
+                        </div>
+                        <div class="product-price">¥1599-1999</div>
+                        <div class="product-tags">
+                            <span class="tag">铅酸电池</span>
+                            <span class="tag">轻便</span>
+                            <span class="tag">门店多</span>
+                        </div>
+                        <button class="product-btn" onclick="alert('建议到线下门店试驾体验后再购买')">📍 查看附近门店</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"><i class="fas fa-bolt"></i></div>
+                    <div class="product-content">
+                        <span class="product-badge hot">热门推荐</span>
+                        <h3>爱玛 小熊系列</h3>
+                        <p>外观时尚可爱，粉色系设计深受年轻人喜爱，性能稳定</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <div class="spec-value">55km</div>
+                                <div class="spec-label">续航</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">48V</div>
+                                <div class="spec-label">电压</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">14Ah</div>
+                                <div class="spec-label">电池</div>
+                            </div>
+                        </div>
+                        <div class="product-price">¥1799-2199</div>
+                        <div class="product-tags">
+                            <span class="tag">时尚外观</span>
+                            <span class="tag">轻便</span>
+                            <span class="tag">女性首选</span>
+                        </div>
+                        <button class="product-btn" onclick="alert('建议到线下门店试驾体验后再购买')">📍 查看附近门店</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"><i class="fas fa-star"></i></div>
+                    <div class="product-content">
+                        <span class="product-badge new">新品</span>
+                        <h3>新日 晴天系列</h3>
+                        <p>新日入门力作，品质可靠，续航实在，适合各种场景</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <div class="spec-value">65km</div>
+                                <div class="spec-label">续航</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">48V</div>
+                                <div class="spec-label">电压</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">20Ah</div>
+                                <div class="spec-label">电池</div>
+                            </div>
+                        </div>
+                        <div class="product-price">¥2299-2699</div>
+                        <div class="product-tags">
+                            <span class="tag">长续航</span>
+                            <span class="tag">品质可靠</span>
+                            <span class="tag">通用</span>
+                        </div>
+                        <button class="product-btn" onclick="alert('建议到线下门店试驾体验后再购买')">📍 查看附近门店</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 中端 3000-5000元 -->
+        <div class="budget-content" id="mid">
+            <div class="budget-intro">
+                <h2>🎯 中端级 | 3000-5000元</h2>
+                <p>性价比最高的价位段！续航更远、配置更完善、智能功能丰富，上班族首选。</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> 续航 60-100km</li>
+                    <li><i class="fas fa-check"></i> 锂电/大容量铅酸</li>
+                    <li><i class="fas fa-check"></i> APP互联、NFC解锁</li>
+                    <li><i class="fas fa-check"></i> 适合通勤族</li>
+                </ul>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background: var(--primary-gradient);"><i class="fas fa-crown"></i></div>
+                    <div class="product-content">
+                        <span class="product-badge hot">销量冠军</span>
+                        <h3>雅迪 冠能 DE3</h3>
+                        <p>雅迪旗舰入门款，TTFAR增程系统，续航能力突出，口碑极佳</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <div class="spec-value">100km</div>
+                                <div class="spec-label">续航</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">48V</div>
+                                <div class="spec-label">电压</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">24Ah</div>
+                                <div class="spec-label">锂电</div>
+                            </div>
+                        </div>
+                        <div class="product-price">¥3499-4299</div>
+                        <div class="product-tags">
+                            <span class="tag">超长续航</span>
+                            <span class="tag">锂电池</span>
+                            <span class="tag">智能</span>
+                        </div>
+                        <button class="product-btn" onclick="alert('建议到线下门店试驾体验后再购买')">📍 查看附近门店</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"><i class="fas fa-bolt"></i></div>
+                    <div class="product-content">
+                        <span class="product-badge value">全能选手</span>
+                        <h3>爱玛 指挥官A118</h3>
+                        <p>引擎MAX系统，动力强、续航远、舒适度高，家庭用车首选</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <div class="spec-value">90km</div>
+                                <div class="spec-label">续航</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">60V</div>
+                                <div class="spec-label">电压</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">20Ah</div>
+                                <div class="spec-label">铅酸</div>
+                            </div>
+                        </div>
+                        <div class="product-price">¥3799-4499</div>
+                        <div class="product-tags">
+                            <span class="tag">动力强</span>
+                            <span class="tag">舒适</span>
+                            <span class="tag">家庭适用</span>
+                        </div>
+                        <button class="product-btn" onclick="alert('建议到线下门店试驾体验后再购买')">📍 查看附近门店</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="product-content">
+                        <span class="product-badge new">智能首选</span>
+                        <h3>小牛 UQis/UQi</h3>
+                        <p>智能电动车标杆，APP控制、GPS定位、远程解锁，科技感十足</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <div class="spec-value">65km</div>
+                                <div class="spec-label">续航</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">48V</div>
+                                <div class="spec-label">电压</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">18Ah</div>
+                                <div class="spec-label">锂电</div>
+                            </div>
+                        </div>
+                        <div class="product-price">¥3999-4999</div>
+                        <div class="product-tags">
+                            <span class="tag">APP控制</span>
+                            <span class="tag">GPS定位</span>
+                            <span class="tag">科技感</span>
+                        </div>
+                        <button class="product-btn" onclick="alert('建议到线下门店试驾体验后再购买')">📍 查看附近门店</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 高端 5000元以上 -->
+        <div class="budget-content" id="high">
+            <div class="budget-intro">
+                <h2>👑 高端级 | 5000元以上</h2>
+                <p>追求极致体验？旗舰车型拥有最强续航、最全配置、最炫酷外观。</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> 续航 100km+</li>
+                    <li><i class="fas fa-check"></i> 高性能锂电池</li>
+                    <li><i class="fas fa-check"></i> 高级智能驾驶辅助</li>
+                    <li><i class="fas fa-check"></i> 顶级品质/服务</li>
+                </ul>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background: var(--primary-gradient);"><i class="fas fa-rocket"></i></div>
+                    <div class="product-content">
+                        <span class="product-badge hot">旗舰爆款</span>
+                        <h3>小牛 NQi GT</h3>
+                        <p>小牛旗舰车型，性能强劲，续航超长，智能功能全面，骑出去就是焦点</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <div class="spec-value">120km</div>
+                                <div class="spec-label">续航</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">60V</div>
+                                <div class="spec-label">电压</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">34Ah</div>
+                                <div class="spec-label">锂电</div>
+                            </div>
+                        </div>
+                        <div class="product-price">¥6999-8999</div>
+                        <div class="product-tags">
+                            <span class="tag">超长续航</span>
+                            <span class="tag">顶配</span>
+                            <span class="tag">旗舰</span>
+                        </div>
+                        <button class="product-btn" onclick="alert('建议到线下门店试驾体验后再购买')">📍 查看附近门店</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"><i class="fas fa-robot"></i></div>
+                    <div class="product-content">
+                        <span class="product-badge new">智能旗舰</span>
+                        <h3>九号 E125/E200</h3>
+                        <p>九号黑科技旗舰，自动感应解锁、智能防盗、整车OTA升级，骑过的都说香</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <div class="spec-value">100km</div>
+                                <div class="spec-label">续航</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">60V</div>
+                                <div class="spec-label">电压</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">40Ah</div>
+                                <div class="spec-label">锂电</div>
+                            </div>
+                        </div>
+                        <div class="product-price">¥5999-7999</div>
+                        <div class="product-tags">
+                            <span class="tag">自动驾驶</span>
+                            <span class="tag">智能防盗</span>
+                            <span class="tag">OTA升级</span>
+                        </div>
+                        <button class="product-btn" onclick="alert('建议到线下门店试驾体验后再购买')">📍 查看附近门店</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"><i class="fas fa-gem"></i></div>
+                    <div class="product-content">
+                        <span class="product-badge value">品质之选</span>
+                        <h3>雅迪 冠能 E8</h3>
+                        <p>雅迪高端旗舰，TTFAR 2.0增程系统，极限续航挑战200公里，品质卓越</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <div class="spec-value">150km</div>
+                                <div class="spec-label">续航</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">72V</div>
+                                <div class="spec-label">电压</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">38Ah</div>
+                                <div class="spec-label">石墨烯</div>
+                            </div>
+                        </div>
+                        <div class="product-price">¥5999-7999</div>
+                        <div class="product-tags">
+                            <span class="tag">超长续航</span>
+                            <span class="tag">石墨烯电池</span>
+                            <span class="tag">旗舰</span>
+                        </div>
+                        <button class="product-btn" onclick="alert('建议到线下门店试驾体验后再购买')">📍 查看附近门店</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 选购建议 -->
+        <div class="tips-section">
+            <h2><i class="fas fa-lightbulb"></i> 选购建议</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3><i class="fas fa-user"></i> 明确用途</h3>
+                    <p>学生党/短途代步选入门款；上班族通勤选中端款；追求极致体验选高端款。</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-ruler"></i> 关注续航</h3>
+                    <p>根据每日通勤距离选择，建议选择续航里程为实际需求的1.5-2倍，避免里程焦虑。</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> 门店很重要</h3>
+                    <p>选择门店多的品牌，售后维修更方便。雅迪、爱玛网点遍布全国。</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-file-alt"></i> 检查证件</h3>
+                    <p>购车前确认车辆在本地目录内，查看CCC认证，避免买了无法上牌。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p style="color: var(--text-muted);">专注于电动车选购指南平台，提供最新政策解读、产品评测和技术指导。</p>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">🏠 首页</a></li>
+                        <li><a href="faq.html">❓ 常见问题</a></li>
+                        <li><a href="budget.html">💰 预算推荐</a></li>
+                        <li><a href="upgrade.html">⚡ 升级改装</a></li>
+                        <li><a href="brands.html">🏆 品牌对比</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li>📧 448274990@qq.com</li>
+                        <li>📞 15627270915</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 电动车选购指南. 版权所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.budget-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.budget-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.budget-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                const budgetId = tab.dataset.budget;
+                document.getElementById(budgetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
