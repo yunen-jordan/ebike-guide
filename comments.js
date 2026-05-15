@@ -4,9 +4,9 @@
  */
 
 (function() {
-    // 避免重复加载
-    if (window.CommentsLoaded) return;
-    window.CommentsLoaded = true;
+    // 避免重复初始化
+    if (window.CommentsInit) return;
+    window.CommentsInit = true;
 
     // 加载 Supabase SDK
     var sbScript = document.createElement('script');
@@ -27,11 +27,106 @@
         var articleId = getArticleId();
         var currentUser = null;
 
+        // ========== 首页登录面板切换 ==========
+        window.toggleLoginPanel = function() {
+            var panel = document.getElementById('loginPanel');
+            if (panel) {
+                panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+            }
+        };
+
+        // 点击外部关闭登录面板
+        document.addEventListener('click', function(e) {
+            var panel = document.getElementById('loginPanel');
+            var card = document.getElementById('userLoginCard');
+            if (panel && card && !card.contains(e.target)) {
+                panel.style.display = 'none';
+            }
+        });
+
+        // 首页登录功能
+        window.homeSignUp = async function() {
+            var email = document.getElementById('homeCommentEmail').value.trim();
+            var password = document.getElementById('homeCommentPassword').value;
+
+            if (!email || !password) {
+                alert('请填写邮箱和密码');
+                return;
+            }
+
+            var { error } = await supabase.auth.signUp({
+                email: email,
+                password: password,
+                options: { data: { nickname: email.split('@')[0] } }
+            });
+
+            if (error) {
+                alert('注册失败: ' + error.message);
+            } else {
+                alert('注册成功！请查收验证邮件后登录');
+            }
+        };
+
+        window.homeSignIn = async function() {
+            var email = document.getElementById('homeCommentEmail').value.trim();
+            var password = document.getElementById('homeCommentPassword').value;
+
+            if (!email || !password) {
+                alert('请填写邮箱和密码');
+                return;
+            }
+
+            var { data, error } = await supabase.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+            if (error) {
+                alert('登录失败: ' + error.message);
+            } else {
+                currentUser = data.user;
+                updateHomeUserInfo();
+                toggleLoginPanel();
+            }
+        };
+
+        function updateHomeUserInfo() {
+            var loginPrompt = document.getElementById('loginPrompt');
+            var loginPanel = document.getElementById('loginPanel');
+            var userInfo = document.getElementById('userInfo');
+
+            if (!currentUser) {
+                if (loginPrompt) loginPrompt.style.display = 'flex';
+                if (loginPanel) loginPanel.style.display = 'none';
+                if (userInfo) userInfo.style.display = 'none';
+                return;
+            }
+
+            var meta = currentUser.user_metadata || {};
+            var name = meta.nickname || currentUser.email.split('@')[0];
+            var avatar = meta.avatar_url || 'https://api.dicebear.com/7.x/initials/svg?seed=' + encodeURIComponent(name);
+
+            if (loginPrompt) loginPrompt.style.display = 'none';
+            if (loginPanel) loginPanel.style.display = 'none';
+            if (userInfo) {
+                userInfo.style.display = 'flex';
+                var avatarImg = document.getElementById('userAvatar');
+                var nameSpan = document.getElementById('userName');
+                if (avatarImg) avatarImg.src = avatar;
+                if (nameSpan) nameSpan.textContent = name;
+            }
+        }
+
         // ========== 用户认证 ==========
         async function signUp() {
-            var email = document.getElementById('commentEmail').value.trim();
-            var password = document.getElementById('commentPassword').value;
-            var nickname = document.getElementById('commentNickname').value.trim() || email.split('@')[0];
+            var email = document.getElementById('commentEmail');
+            var password = document.getElementById('commentPassword');
+            var nickname = document.getElementById('commentNickname');
+            if (!email || !password) return;
+
+            email = email.value.trim();
+            password = password.value;
+            var nickVal = nickname ? nickname.value.trim() : '';
 
             if (!email || !password) {
                 showMessage('请填写邮箱和密码', 'error');
@@ -42,7 +137,7 @@
                 email: email,
                 password: password,
                 options: {
-                    data: { nickname: nickname }
+                    data: { nickname: nickVal || email.split('@')[0] }
                 }
             });
 
@@ -55,8 +150,12 @@
         }
 
         async function signIn() {
-            var email = document.getElementById('commentEmail').value.trim();
-            var password = document.getElementById('commentPassword').value;
+            var email = document.getElementById('commentEmail');
+            var password = document.getElementById('commentPassword');
+            if (!email || !password) return;
+
+            email = email.value.trim();
+            password = password.value;
 
             if (!email || !password) {
                 showMessage('请填写邮箱和密码', 'error');
@@ -73,6 +172,7 @@
             } else {
                 currentUser = data.user;
                 updateAuthUI();
+                updateHomeUserInfo();
                 showMessage('登录成功！', 'success');
                 loadComments();
             }
@@ -82,11 +182,12 @@
             await supabase.auth.signOut();
             currentUser = null;
             updateAuthUI();
+            updateHomeUserInfo();
             showMessage('已退出登录', 'info');
         }
 
         async function signInWithGithub() {
-            var { data, error } = await supabase.auth.signInWithOAuth({
+            var { error } = await supabase.auth.signInWithOAuth({
                 provider: 'github',
                 options: {
                     redirectTo: window.location.href
@@ -98,7 +199,7 @@
         }
 
         async function signInWithGoogle() {
-            var { data, error } = await supabase.auth.signInWithOAuth({
+            var { error } = await supabase.auth.signInWithOAuth({
                 provider: 'google',
                 options: {
                     redirectTo: window.location.href
@@ -375,14 +476,17 @@
                 if (event === 'SIGNED_IN' && session) {
                     currentUser = session.user;
                     updateAuthUI();
+                    updateHomeUserInfo();
                     loadComments();
                 } else if (event === 'SIGNED_OUT') {
                     currentUser = null;
                     updateAuthUI();
+                    updateHomeUserInfo();
                 }
             });
 
             updateAuthUI();
+            updateHomeUserInfo();
             loadComments();
 
             // 绑定提交按钮

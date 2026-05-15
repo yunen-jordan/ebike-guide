@@ -1278,6 +1278,44 @@
                     <li><a href="brands.html">品牌对比</a></li>
                 </ul>
             </nav>
+
+            <!-- 用户登录卡片 -->
+            <div class="user-login-card" id="userLoginCard">
+                <!-- 未登录状态 -->
+                <div class="login-prompt" id="loginPrompt">
+                    <button class="login-btn" onclick="window.toggleLoginPanel()">
+                        <i class="fas fa-user"></i> 登录
+                    </button>
+                </div>
+                <!-- 登录面板 -->
+                <div class="login-panel" id="loginPanel" style="display: none;">
+                    <div class="login-panel-header">
+                        <span>登录 / 注册</span>
+                        <button onclick="window.toggleLoginPanel()" class="close-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="login-panel-body">
+                        <button class="oauth-btn btn-github" onclick="window.commentsSignInWithGithub()">
+                            <i class="fab fa-github"></i> GitHub
+                        </button>
+                        <button class="oauth-btn btn-google" onclick="window.commentsSignInWithGoogle()">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <div class="divider"><span>或</span></div>
+                        <input type="email" id="homeCommentEmail" placeholder="邮箱地址">
+                        <input type="password" id="homeCommentPassword" placeholder="密码">
+                        <div class="auth-form-btns">
+                            <button onclick="window.homeSignIn()" class="btn-primary">登录</button>
+                            <button onclick="window.homeSignUp()" class="btn-secondary">注册</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 已登录状态 -->
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <img id="userAvatar" src="" alt="avatar">
+                    <span id="userName"></span>
+                    <button onclick="window.commentsSignOut()" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </div>
         </div>
     </header>
     
@@ -1838,6 +1876,8 @@
         </div>
     </footer>
 
+    <script src="config.js"></script>
+    <script src="comments.js"></script>
     <script src="common.js"></script>
     <script>
         // 品牌对比器数据
