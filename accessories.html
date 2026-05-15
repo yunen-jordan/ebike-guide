@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配件选购指南 | 电动车必备装备推荐 2026</title>
+    <meta name="description" content="2026年电动车配件选购指南，涵盖头盔、锁、车灯、GPS定位器、手机支架等必备装备推荐，帮你的小电驴武装到牙齿！">
+    <meta name="keywords" content="电动车配件,头盔推荐,电动车锁,车灯,GPS定位器,手机支架,配件选购">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+        /* 页面通用头部 */
+        .page-header {
+            background: linear-gradient(180deg, 
+                rgba(102, 126, 234, 0.3) 0%, 
+                rgba(118, 75, 162, 0.2) 50%,
+                transparent 100%);
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.4) 0%, transparent 70%);
+            animation: glow 4s ease-in-out infinite;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 返回首页 */
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--glass-bg);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: var(--transition);
+            border: 1px solid var(--glass-border);
+            color: var(--accent-cyan);
+        }
+
+        .back-home:hover {
+            background: var(--accent-gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* 快速导航 */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 40px 0;
+        }
+
+        .quick-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            color: var(--text-muted);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .quick-nav a:hover {
+            background: var(--secondary-gradient);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.3);
+        }
+
+        /* 配件分类 */
+        .category-section {
+            margin: 60px 0;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-gradient);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.3);
+        }
+
+        .category-icon.safety { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); }
+        .category-icon.light { background: linear-gradient(135deg, #feca57 0%, #ff9f43 100%); }
+        .category-icon.lock { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .category-icon.gps { background: linear-gradient(135deg, #00d2d3 0%, #01a3a4 100%); }
+        .category-icon.comfort { background: linear-gradient(135deg, #5f27cd 0%, #c44569 100%); }
+        .category-icon.tool { background: linear-gradient(135deg, #1dd1a1 0%, #10ac84 100%); }
+        .category-icon.rain { background: linear-gradient(135deg, #54a0ff 0%, #2e86de 100%); }
+
+        .category-header h2 {
+            font-size: 1.8rem;
+            color: white;
+            margin: 0;
+        }
+
+        .category-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 4px 0 0 0;
+        }
+
+        /* 配件卡片网格 */
+        .accessory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .accessory-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .accessory-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(245, 87, 108, 0.5);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.25);
+        }
+
+        .accessory-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--secondary-gradient);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .accessory-card:hover::before {
+            opacity: 1;
+        }
+
+        .accessory-image {
+            width: 100%;
+            height: 180px;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accessory-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .badge-essential {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+        }
+
+        .badge-recommended {
+            background: linear-gradient(135deg, #5f27cd 0%, #c44569 100%);
+            color: white;
+        }
+
+        .badge-optional {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .accessory-content {
+            padding: 24px;
+        }
+
+        .accessory-content h3 {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .accessory-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .accessory-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .accessory-tag {
+            padding: 4px 12px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .accessory-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-range {
+            color: var(--accent-cyan);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .buy-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            color: var(--accent-pink);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .buy-link:hover {
+            background: var(--secondary-gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* 选购要点 */
+        .tips-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .tips-box h4 {
+            color: var(--accent-cyan);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tips-box ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tips-box ul li {
+            padding: 8px 0;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .tips-box ul li::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        /* 警告框 */
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 152, 0, 0.15) 100%);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box h4 {
+            color: #ffc107;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* 预算推荐 */
+        .budget-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 60px 0;
+        }
+
+        .budget-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .budget-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .budget-card.basic::before { background: var(--primary-gradient); }
+        .budget-card.standard::before { background: var(--secondary-gradient); }
+        .budget-card.pro::before { background: var(--accent-gradient); }
+
+        .budget-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.25);
+        }
+
+        .budget-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .budget-card .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 16px 0;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .budget-card .price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        .budget-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .budget-card ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .budget-card ul li::before {
+            content: '✓';
+            color: var(--accent-green);
+        }
+
+        @media (max-width: 960px) {
+            .budget-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .accessory-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>电动车选购指南</h1>
+                    <p>⚡ 年轻人的出行神器</p>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="reviews.html">评测</a></li>
+                    <li><a href="faq.html">常见问题</a></li>
+                    <li><a href="budget.html">预算推荐</a></li>
+                    <li><a href="upgrade.html">升级改装</a></li>
+                    <li><a href="accessories.html" class="active">配件选购</a></li>
+                    <li><a href="brands.html">品牌对比</a></li>
+                </ul>
+            </nav>
+
+            <!-- 用户登录卡片 -->
+            <div class="user-login-card" id="userLoginCard">
+                <div class="login-prompt" id="loginPrompt">
+                    <button class="login-btn" onclick="window.toggleLoginPanel()">
+                        <i class="fas fa-user"></i> 登录
+                    </button>
+                </div>
+                <div class="login-panel" id="loginPanel" style="display: none;">
+                    <div class="login-panel-header">
+                        <span>登录 / 注册</span>
+                        <button onclick="window.toggleLoginPanel()" class="close-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="login-panel-body">
+                        <button class="oauth-btn btn-github" onclick="window.commentsSignInWithGithub()">
+                            <i class="fab fa-github"></i> GitHub
+                        </button>
+                        <button class="oauth-btn btn-google" onclick="window.commentsSignInWithGoogle()">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <div class="divider"><span>或</span></div>
+                        <input type="email" id="homeCommentEmail" placeholder="邮箱地址">
+                        <input type="password" id="homeCommentPassword" placeholder="密码">
+                        <div class="auth-form-btns">
+                            <button onclick="window.homeSignIn()" class="btn-primary">登录</button>
+                            <button onclick="window.homeSignUp()" class="btn-secondary">注册</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <img id="userAvatar" src="" alt="avatar">
+                    <span id="userName"></span>
+                    <button onclick="window.commentsSignOut()" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container page-header-content">
+            <a href="index.html" class="back-home">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            <h1>🛒 配件选购指南</h1>
+            <p>让你的小电驴武装到牙齿！从安全头盔到智能防盗，这些配件让你的骑行更安全、更舒适</p>
+            
+            <div class="quick-nav">
+                <a href="#safety"><i class="fas fa-shield-alt"></i> 安全配件</a>
+                <a href="#light"><i class="fas fa-lightbulb"></i> 照明设备</a>
+                <a href="#lock"><i class="fas fa-lock"></i> 防盗锁具</a>
+                <a href="#gps"><i class="fas fa-satellite"></i> GPS定位</a>
+                <a href="#comfort"><i class="fas fa-mobile-alt"></i> 舒适装备</a>
+                <a href="#tool"><i class="fas fa-tools"></i> 维护工具</a>
+                <a href="#rain"><i class="fas fa-umbrella"></i> 雨季装备</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="padding: 60px 0;">
+        <!-- 安全配件 -->
+        <section class="category-section" id="safety">
+            <div class="category-header">
+                <div class="category-icon safety">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <div>
+                    <h2>🛡️ 安全配件</h2>
+                    <p>骑行安全永远是第一位，这些装备必不可少</p>
+                </div>
+            </div>
+
+            <div class="accessory-grid">
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);">
+                        <i class="fas fa-hard-hat"></i>
+                        <span class="accessory-badge badge-essential">必备</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>电动车头盔</h3>
+                        <p>新国标强制要求！选3C认证的半盔或3/4盔，夏季可选通风款。推荐购买带挡风罩的四季盔，一盔搞定全年。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">3C认证</span>
+                            <span class="accessory-tag">四季适用</span>
+                            <span class="accessory-tag">新国标</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥80 - ¥300</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #feca57 0%, #ff9f43 100%);">
+                        <i class="fas fa-hands"></i>
+                        <span class="accessory-badge badge-essential">必备</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>骑行手套</h3>
+                        <p>防晒、防滑、防寒四季必备。夏季选透气网眼款，冬季选加绒防风款。推荐带触屏功能的，方便接打电话。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">触屏功能</span>
+                            <span class="accessory-tag">防滑掌心</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥20 - ¥80</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #54a0ff 0%, #2e86de 100%);">
+                        <i class="fas fa-vest"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>反光背心/马甲</h3>
+                        <p>夜间骑行必备，荧光绿/橙反光材质，30米外可见。冬天穿在外套外面，夏天可选网眼款。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">夜间安全</span>
+                            <span class="accessory-tag">可折叠</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥15 - ¥50</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-box">
+                <h4><i class="fas fa-info-circle"></i> 头盔选购要点</h4>
+                <ul>
+                    <li>必须有3C认证标志，无认证的头盔安全性无法保证</li>
+                    <li>选择适合头围的尺寸，太大或太小都不能起到保护作用</li>
+                    <li>EPS泡沫层要均匀密实，按压后能快速回弹</li>
+                    <li>束带要牢固，双D扣比插扣更牢固安全</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 照明设备 -->
+        <section class="category-section" id="light">
+            <div class="category-header">
+                <div class="category-icon light">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div>
+                    <h2>💡 照明设备</h2>
+                    <p>夜间骑行的安全保障，照亮前路也让自己被看见</p>
+                </div>
+            </div>
+
+            <div class="accessory-grid">
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #feca57 0%, #ff9f43 100%);">
+                        <i class="fas fa-bicycle"></i>
+                        <span class="accessory-badge badge-essential">必备</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>前灯（车灯）</h3>
+                        <p>市区骑行选300-500流明即可，郊区或山路建议800流明以上。推荐选带防水功能的，支持USB充电更方便。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">300-800流明</span>
+                            <span class="accessory-tag">USB充电</span>
+                            <span class="accessory-tag">防水</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥50 - ¥200</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);">
+                        <i class="fas fa-traffic-light"></i>
+                        <span class="accessory-badge badge-essential">必备</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>尾灯/刹车灯</h3>
+                        <p>警示后方车辆，让你被看见。推荐选带刹车感应功能的，急刹时自动高亮。Type-C充电，续航要长。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">刹车感应</span>
+                            <span class="accessory-tag">多模式</span>
+                            <span class="accessory-tag">IPX6防水</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥30 - ¥100</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #a55eea 0%, #8854d0 100%);">
+                        <i class="fas fa-hat-cowboy"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>头盔灯</h3>
+                        <p>装在头盔上，随视线方向照亮前方。越野或夜间骑行必备，可以选择绑带式或磁吸式安装。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">随动照明</span>
+                            <span class="accessory-tag">轻便</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥40 - ¥120</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> 注意！灯光使用规范</h4>
+                <p>前灯不要调得太高或直射对面行人和车辆，会车时要适当降低亮度。尾灯即使白天也建议开启，让后方车辆更容易发现你。</p>
+            </div>
+        </section>
+
+        <!-- 防盗锁具 -->
+        <section class="category-section" id="lock">
+            <div class="category-header">
+                <div class="category-icon lock">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div>
+                    <h2>🔒 防盗锁具</h2>
+                    <p>车子安全靠锁守，选对锁具让小偷望而却步</p>
+                </div>
+            </div>
+
+            <div class="accessory-grid">
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-link"></i>
+                        <span class="accessory-badge badge-essential">必备</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>硬质U型锁</h3>
+                        <p>防盗能力最强的锁具！选择B级以上锁芯，锁体要用硬化钢。停车时U锁穿过车轮和车架，同时锁在固定物上。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">B级锁芯</span>
+                            <span class="accessory-tag">硬化钢</span>
+                            <span class="accessory-tag">20mm以上</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥80 - ¥300</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #00d2d3 0%, #01a3a4 100%);">
+                        <i class="fas fa-cable"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>钢缆锁</h3>
+                        <p>方便灵活，适合配合U型锁使用。选购10mm以上粗钢丝，外层包塑防止刮花车漆。建议长度1.5米以上。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">10mm以上</span>
+                            <span class="accessory-tag">外层包塑</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥40 - ¥150</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #5f27cd 0%, #c44569 100%);">
+                        <i class="fas fa-fingerprint"></i>
+                        <span class="accessory-badge badge-optional">选配</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>智能碟锁</h3>
+                        <p>指纹/蓝牙解锁，方便快捷。带有报警功能，非法移动会发出警报声。适合预算充足追求便利的用户。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">指纹解锁</span>
+                            <span class="accessory-tag">报警功能</span>
+                            <span class="accessory-tag">蓝牙连接</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥150 - ¥400</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-box">
+                <h4><i class="fas fa-lightbulb"></i> 锁车技巧</h4>
+                <ul>
+                    <li>优先停放在有人看管的停车场或监控摄像头覆盖区域</li>
+                    <li>U型锁要穿过前轮+车架+固定物（栏杆/树），不给小偷留空间</li>
+                    <li>建议同时使用U锁+钢缆锁，增加破坏时间和难度</li>
+                    <li>离开超过2分钟就要锁车，不要存在侥幸心理</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- GPS定位 -->
+        <section class="category-section" id="gps">
+            <div class="category-header">
+                <div class="category-icon gps">
+                    <i class="fas fa-satellite"></i>
+                </div>
+                <div>
+                    <h2>📡 GPS定位器</h2>
+                    <p>找回被盗车辆的最后一根稻草，实时掌握车辆动态</p>
+                </div>
+            </div>
+
+            <div class="accessory-grid">
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #00d2d3 0%, #01a3a4 100%);">
+                        <i class="fas fa-satellite-dish"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>外置GPS定位器</h3>
+                        <p>安装在后座下方或车壳内，支持GPS+LBS双模定位。带有围栏报警、轨迹回放、远程断电等功能。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">GPS+LBS</span>
+                            <span class="accessory-tag">实时定位</span>
+                            <span class="accessory-tag">围栏报警</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥100 - ¥300</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #5f27cd 0%, #c44569 100%);">
+                        <i class="fas fa-microchip"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>内置OBD定位器</h3>
+                        <p>插在OBD接口，取电稳定不断电。功能丰富，包括电瓶电压监测、驾驶行为分析等。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">OBD供电</span>
+                            <span class="accessory-tag">电瓶监测</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥150 - ¥400</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #1dd1a1 0%, #10ac84 100%);">
+                        <i class="fas fa-car-battery"></i>
+                        <span class="accessory-badge badge-optional">选配</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>智能电池锁</h3>
+                        <p>专为锂电池设计，防止电池被偷。带有GPS定位和报警功能，适合锂电车用户。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">电池防盗</span>
+                            <span class="accessory-tag">锂电专用</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥80 - ¥200</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 舒适装备 -->
+        <section class="category-section" id="comfort">
+            <div class="category-header">
+                <div class="category-icon comfort">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div>
+                    <h2>📱 舒适装备</h2>
+                    <p>提升骑行体验的小配件，让每次出行更舒适</p>
+                </div>
+            </div>
+
+            <div class="accessory-grid">
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #5f27cd 0%, #c44569 100%);">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>手机支架</h3>
+                        <p>导航必备！推荐选硅胶卡扣式或磁吸式，避免震动导致手机掉落。防水款更适合雨天使用。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">防震设计</span>
+                            <span class="accessory-tag">防水</span>
+                            <span class="accessory-tag">360°旋转</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥20 - ¥80</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #54a0ff 0%, #2e86de 100%);">
+                        <i class="fas fa-suitcase"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>储物包/后备箱</h3>
+                        <p>坐垫下储物空间有限，加装后备箱或车头储物包。推荐防水款，重要物品用防水袋双重保护。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">防水</span>
+                            <span class="accessory-tag">快拆设计</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥30 - ¥200</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #ff9f43 0%, #feca57 100%);">
+                        <i class="fas fa-chair"></i>
+                        <span class="accessory-badge badge-optional">选配</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>加厚坐垫套</h3>
+                        <p>原厂坐垫偏硬，加装记忆棉坐垫套提升舒适度。选防晒防水材质，夏季不烫冬季不冷。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">记忆棉</span>
+                            <span class="accessory-tag">防滑</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥25 - ¥80</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-ring"></i>
+                        <span class="accessory-badge badge-optional">选配</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>防风护手</h3>
+                        <p>冬季骑行必备，挡风保暖。安装在车把两侧，还可以防止意外磕碰。选防水透气材质。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">保暖</span>
+                            <span class="accessory-tag">防水透气</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥30 - ¥100</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 维护工具 -->
+        <section class="category-section" id="tool">
+            <div class="category-header">
+                <div class="category-icon tool">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div>
+                    <h2>🛠️ 维护工具</h2>
+                    <p>随车必备小工具，自己能处理的小问题不用跑维修店</p>
+                </div>
+            </div>
+
+            <div class="accessory-grid">
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #1dd1a1 0%, #10ac84 100%);">
+                        <i class="fas fa-gauge-high"></i>
+                        <span class="accessory-badge badge-essential">必备</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>便携充气泵</h3>
+                        <p>随车携带，轮胎气压低了自己打。选数显款可实时看到胎压，支持汽车胎压设置。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">数显胎压</span>
+                            <span class="accessory-tag">USB充电</span>
+                            <span class="accessory-tag">便携</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥50 - ¥150</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>便携工具包</h3>
+                        <p>包含六角扳手、螺丝刀、扳手等基础工具。处理松动的螺丝、调节刹车等小问题。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">多功能</span>
+                            <span class="accessory-tag">紧凑设计</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥30 - ¥100</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #feca57 0%, #ff9f43 100%);">
+                        <i class="fas fa-tape"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>防水胶带/绝缘胶带</h3>
+                        <p>应急神器！临时固定线路、修补轻微破损、防止摩擦噪音。一卷胶带解决多个问题。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">防水</span>
+                            <span class="accessory-tag">绝缘</span>
+                            <span class="accessory-tag">应急</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥5 - ¥20</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 雨季装备 -->
+        <section class="category-section" id="rain">
+            <div class="category-header">
+                <div class="category-icon rain">
+                    <i class="fas fa-umbrella"></i>
+                </div>
+                <div>
+                    <h2>🌧️ 雨季装备</h2>
+                    <p>雨天骑行的必备装备，安全出行不将就</p>
+                </div>
+            </div>
+
+            <div class="accessory-grid">
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #54a0ff 0%, #2e86de 100%);">
+                        <i class="fas fa-umbrella"></i>
+                        <span class="accessory-badge badge-essential">必备</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>雨衣/雨披</h3>
+                        <p>分体式雨衣活动方便，连体雨披防护更全面。选择反光条设计的，增加雨天可见性。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">反光设计</span>
+                            <span class="accessory-tag">防水涂层</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥30 - ¥120</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-droplet"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>防水鞋套</h3>
+                        <p>防止鞋子被淋湿，选PVC或橡胶材质。折叠收纳方便，不占空间。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">轻便折叠</span>
+                            <span class="accessory-tag">防滑底</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥15 - ¥50</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accessory-card">
+                    <div class="accessory-image" style="background: linear-gradient(135deg, #5f27cd 0%, #c44569 100%);">
+                        <i class="fas fa-mobile-screen"></i>
+                        <span class="accessory-badge badge-recommended">推荐</span>
+                    </div>
+                    <div class="accessory-content">
+                        <h3>防水手机袋</h3>
+                        <p>挂在脖子上或装在口袋里，骑行时也能看导航。支持触屏操作，IPX8级防水。</p>
+                        <div class="accessory-tags">
+                            <span class="accessory-tag">IPX8防水</span>
+                            <span class="accessory-tag">触屏操作</span>
+                        </div>
+                        <div class="accessory-price">
+                            <span class="price-range">¥15 - ¥50</span>
+                            <a href="https://www.jd.com" target="_blank" class="buy-link">
+                                <i class="fas fa-shopping-cart"></i> 去选购
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> 雨天骑行安全提示</h4>
+                <p>雨天尽量减少骑行，必须出行时要降低速度、延长刹车距离。避开积水较深的路段，防止电机进水损坏。停车后及时擦干车身，特别是电池接口处。</p>
+            </div>
+        </section>
+
+        <!-- 预算推荐 -->
+        <section>
+            <div class="section-title" style="margin-top: 80px;">
+                <h2>💰 预算推荐方案</h2>
+                <p>根据不同预算，帮你搭配最实用的配件组合</p>
+            </div>
+
+            <div class="budget-summary">
+                <div class="budget-card basic">
+                    <h3>基础版</h3>
+                    <div class="price">¥200<span>起</span></div>
+                    <ul>
+                        <li>3C认证头盔</li>
+                        <li>前灯 + 尾灯</li>
+                        <li>硬质U型锁</li>
+                        <li>便携充气泵</li>
+                        <li>雨衣</li>
+                    </ul>
+                    <span class="guide-tag" style="background: var(--primary-gradient);">适合：日常短途通勤</span>
+                </div>
+
+                <div class="budget-card standard">
+                    <h3>标准版</h3>
+                    <div class="price">¥500<span>起</span></div>
+                    <ul>
+                        <li>四季头盔</li>
+                        <li>前灯 + 尾灯 + 刹车感应</li>
+                        <li>U型锁 + 钢缆锁</li>
+                        <li>GPS定位器</li>
+                        <li>手机支架 + 储物包</li>
+                        <li>骑行手套 + 雨衣</li>
+                        <li>便携工具包</li>
+                    </ul>
+                    <span class="guide-tag" style="background: var(--secondary-gradient);">适合：日常通勤 + 周末出行</span>
+                </div>
+
+                <div class="budget-card pro">
+                    <h3>旗舰版</h3>
+                    <div class="price">¥1000<span>起</span></div>
+                    <ul>
+                        <li>智能头盔（带灯）</li>
+                        <li>专业骑行灯组</li>
+                        <li>智能碟锁 + U型锁</li>
+                        <li>多功能GPS定位器</li>
+                        <li>手机支架 + 防水包 + 坐垫套</li>
+                        <li>骑行手套 + 防风护手</li>
+                        <li>全套雨季装备</li>
+                        <li>专业工具包 + 充气泵</li>
+                    </ul>
+                    <span class="guide-tag" style="background: var(--accent-gradient);">适合：追求品质的用户</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8;">电动车配件选购指南，帮你选对装备，安全出行！</p>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">🏠 首页</a></li>
+                        <li><a href="accessories.html">🛒 配件选购</a></li>
+                        <li><a href="reviews.html">📝 评测</a></li>
+                        <li><a href="upgrade.html">⚡ 升级改装</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 电动车选购指南. 版权所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="comments.js"></script>
+    <script src="common.js"></script>
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('.quick-nav a, a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
