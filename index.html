@@ -1016,17 +1016,26 @@
             aspect-ratio: 4/3;
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
         }
         
         .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+            width: 80%;
+            max-width: 160px;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            transition: all 0.4s ease;
         }
         
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.15);
+            opacity: 1;
+            filter: brightness(0) invert(1) drop-shadow(0 0 20px rgba(102, 126, 234, 0.8));
         }
         
         .gallery-overlay {
@@ -1623,72 +1632,72 @@
             
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://osswebsite.yadea.com.cn/II_f87c794ea7.png?x-oss-process=image/format,webp/quality,q_80" alt="雅迪电动自行车">
+                    <img src="https://www.yadea.com.cn/images/logo.png" alt="雅迪" onerror="this.src='https://img.yadea.com.cn/group1/M00/00/52/rBLzc2G_5R-AeJV4AAAJJi5V0eY064.png'">
                     <div class="gallery-overlay">
-                        <h4>雅迪冠能系列</h4>
+                        <h4>雅迪 YADEA</h4>
                         <p>超长续航，智能出行 💨</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://img13.360buyimg.com/pcpubliccms/jfs/t1/411248/8/13504/68679/69ccc935F33224d8e/0083320320967b35.png.avif" alt="爱玛电动自行车">
+                    <img src="https://www.aimache.com/assets/img/logo.png" alt="爱玛" onerror="this.src='https://aimar.oss-cn-beijing.aliyuncs.com/2023/05/logo.png'">
                     <div class="gallery-overlay">
-                        <h4>爱玛引擎MAX</h4>
+                        <h4>爱玛 AIMA</h4>
                         <p>时尚外观，强劲动力 ⚡</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://img10.360buyimg.com/pcpubliccms/s1440x1440_jfs/t1/373397/13/10007/53963/693fa66eF55de929a/8b0aced9e616eb11.jpg.avif" alt="小牛电动自行车">
+                    <img src="https://www.niu.com/assets/img/logo-niu.svg" alt="小牛" onerror="this.src='https://cdn-niu.press.relsell.top/2024/01/niu-logo.png'">
                     <div class="gallery-overlay">
-                        <h4>小牛 FXT 系列</h4>
+                        <h4>小牛 NIU</h4>
                         <p>科技感十足，智能互联 🤖</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://www.ninebot.com/content/dam/segway-ninebot/cn/zh_cn/content-import/product-image/Escooter_Dz110P_EVASpecialEdition_PC.png" alt="九号电动自行车">
+                    <img src="https://www.ninebot.com/logo.svg" alt="九号" onerror="this.src='https://static.segway-ninebot.com/resource/logo-ninebot.png'">
                     <div class="gallery-overlay">
-                        <h4>九号 EVA 联名款</h4>
+                        <h4>九号 NINEBOT</h4>
                         <p>自动驾驶，智能防盗 🛡️</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://img10.360buyimg.com/pcpubliccms/s1440x1440_jfs/t1/307049/1/15911/108927/6870cdabFe5d439e3/34124d89b7939819.png.avif" alt="新日电动自行车">
+                    <img src="https://www.xinri.com/images/logo.png" alt="新日" onerror="this.src='https://img.xrqs.com/2023/03/logo.png'">
                     <div class="gallery-overlay">
-                        <h4>新日超能跑系列</h4>
+                        <h4>新日 SUNRA</h4>
                         <p>性价比之选，品质保障 💪</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&q=80" alt="台铃电动自行车" loading="lazy">
+                    <img src="https://www.tailg.com/skin/img/logo.png" alt="台铃" onerror="this.src='https://img.tailg.com.cn/logo.png'">
                     <div class="gallery-overlay">
-                        <h4>台铃超能二代</h4>
+                        <h4>台铃 TAILG</h4>
                         <p>云动力长续航，300km不是梦 🛣️</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="绿源电动自行车" loading="lazy">
+                    <img src="https://www.luyuan.com/skin/img/logo.png" alt="绿源" onerror="this.src='https://img.luyuan.com/logo.png'">
                     <div class="gallery-overlay">
-                        <h4>绿源液冷超模</h4>
+                        <h4>绿源 LUYUA</h4>
                         <p>液冷技术，6年质保 🔧</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=600&q=80" alt="极核电动自行车" loading="lazy">
+                    <img src="https://www.ceedeep.com/assets/img/logo.svg" alt="极核" onerror="this.src='https://img.ceedeep.com/logo.png'">
                     <div class="gallery-overlay">
-                        <h4>极核 AE8 S+</h4>
+                        <h4>极核 CEEDEEP</h4>
                         <p>摩企基因，操控之王 🏁</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1606103836293-0a063ee20566?w=600&q=80" alt="小刀电动自行车" loading="lazy">
+                    <img src="https://www.xdao.com/images/logo.png" alt="小刀" onerror="this.src='https://img.xdao.com/logo.png'">
                     <div class="gallery-overlay">
-                        <h4>小刀长征版</h4>
+                        <h4>小刀 XDAO</h4>
                         <p>双动力系统，爬坡能手 ⛰️</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1623125657673-5d8b6c2d2c6f?w=600&q=80" alt="凤凰电动自行车" loading="lazy">
+                    <img src="https://www.phoenix.com/images/logo.png" alt="凤凰" onerror="this.src='https://img.phoenix.com/logo.png'">
                     <div class="gallery-overlay">
-                        <h4>凤凰经典系列</h4>
+                        <h4>凤凰 PHOENIX</h4>
                         <p>百年品牌，经济耐用 🏛️</p>
                     </div>
                 </div>
