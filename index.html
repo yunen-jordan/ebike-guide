@@ -1022,20 +1022,28 @@
             padding: 30px;
         }
         
-        .gallery-item img {
-            width: 80%;
-            max-width: 160px;
-            height: auto;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
-            transition: all 0.4s ease;
+        .brand-logo-item {
+            flex-direction: column;
+            gap: 0;
         }
         
-        .gallery-item:hover img {
-            transform: scale(1.15);
-            opacity: 1;
-            filter: brightness(0) invert(1) drop-shadow(0 0 20px rgba(102, 126, 234, 0.8));
+        .brand-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .brand-logo-item:hover .brand-icon {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.5);
         }
         
         .gallery-overlay {
@@ -1631,71 +1639,71 @@
             </div>
             
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://www.yadea.com.cn/images/logo.png" alt="雅迪" onerror="this.src='https://img.yadea.com.cn/group1/M00/00/52/rBLzc2G_5R-AeJV4AAAJJi5V0eY064.png'">
+                <div class="gallery-item brand-logo-item">
+                    <div class="brand-icon" style="background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);"><i class="fas fa-bolt"></i></div>
                     <div class="gallery-overlay">
                         <h4>雅迪 YADEA</h4>
                         <p>超长续航，智能出行 💨</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://www.aimache.com/assets/img/logo.png" alt="爱玛" onerror="this.src='https://aimar.oss-cn-beijing.aliyuncs.com/2023/05/logo.png'">
+                <div class="gallery-item brand-logo-item">
+                    <div class="brand-icon" style="background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);"><i class="fas fa-heart"></i></div>
                     <div class="gallery-overlay">
                         <h4>爱玛 AIMA</h4>
                         <p>时尚外观，强劲动力 ⚡</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://www.niu.com/assets/img/logo-niu.svg" alt="小牛" onerror="this.src='https://cdn-niu.press.relsell.top/2024/01/niu-logo.png'">
+                <div class="gallery-item brand-logo-item">
+                    <div class="brand-icon" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);"><i class="fas fa-bull"></i></div>
                     <div class="gallery-overlay">
                         <h4>小牛 NIU</h4>
                         <p>科技感十足，智能互联 🤖</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://www.ninebot.com/logo.svg" alt="九号" onerror="this.src='https://static.segway-ninebot.com/resource/logo-ninebot.png'">
+                <div class="gallery-item brand-logo-item">
+                    <div class="brand-icon" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);"><i class="fas fa-robot"></i></div>
                     <div class="gallery-overlay">
                         <h4>九号 NINEBOT</h4>
                         <p>自动驾驶，智能防盗 🛡️</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://www.xinri.com/images/logo.png" alt="新日" onerror="this.src='https://img.xrqs.com/2023/03/logo.png'">
+                <div class="gallery-item brand-logo-item">
+                    <div class="brand-icon" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%);"><i class="fas fa-sun"></i></div>
                     <div class="gallery-overlay">
                         <h4>新日 SUNRA</h4>
                         <p>性价比之选，品质保障 💪</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://www.tailg.com/skin/img/logo.png" alt="台铃" onerror="this.src='https://img.tailg.com.cn/logo.png'">
+                <div class="gallery-item brand-logo-item">
+                    <div class="brand-icon" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);"><i class="fas fa-flag"></i></div>
                     <div class="gallery-overlay">
                         <h4>台铃 TAILG</h4>
                         <p>云动力长续航，300km不是梦 🛣️</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://www.luyuan.com/skin/img/logo.png" alt="绿源" onerror="this.src='https://img.luyuan.com/logo.png'">
+                <div class="gallery-item brand-logo-item">
+                    <div class="brand-icon" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);"><i class="fas fa-tint"></i></div>
                     <div class="gallery-overlay">
                         <h4>绿源 LUYUA</h4>
                         <p>液冷技术，6年质保 🔧</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://www.ceedeep.com/assets/img/logo.svg" alt="极核" onerror="this.src='https://img.ceedeep.com/logo.png'">
+                <div class="gallery-item brand-logo-item">
+                    <div class="brand-icon" style="background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);"><i class="fas fa-rocket"></i></div>
                     <div class="gallery-overlay">
                         <h4>极核 CEEDEEP</h4>
                         <p>摩企基因，操控之王 🏁</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://www.xdao.com/images/logo.png" alt="小刀" onerror="this.src='https://img.xdao.com/logo.png'">
+                <div class="gallery-item brand-logo-item">
+                    <div class="brand-icon" style="background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%);"><i class="fas fa-knife-kitchen"></i></div>
                     <div class="gallery-overlay">
                         <h4>小刀 XDAO</h4>
                         <p>双动力系统，爬坡能手 ⛰️</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://www.phoenix.com/images/logo.png" alt="凤凰" onerror="this.src='https://img.phoenix.com/logo.png'">
+                <div class="gallery-item brand-logo-item">
+                    <div class="brand-icon" style="background: linear-gradient(135deg, #d63031 0%, #ff7675 100%);"><i class="fas fa-bird"></i></div>
                     <div class="gallery-overlay">
                         <h4>凤凰 PHOENIX</h4>
                         <p>百年品牌，经济耐用 🏛️</p>
