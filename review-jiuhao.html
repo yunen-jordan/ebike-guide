@@ -249,6 +249,42 @@
                 查看全部品牌 <i class="fas fa-arrow-right"></i>
             </a>
         </div>
+
+        <!-- ====== 评论区域 ====== -->
+        <div class="comments-section">
+            <h2><i class="fas fa-comments"></i> 评论 <span class="comment-count" id="commentCount">0</span></h2>
+
+            <!-- 认证区域 -->
+            <div class="comment-auth" id="commentAuth">
+                <p class="comment-auth-tip">登录后即可发表评论</p>
+                <div class="comment-auth-buttons">
+                    <button class="btn-github" onclick="window.commentsSignInWithGithub()"><i class="fab fa-github"></i> GitHub</button>
+                    <button class="btn-google" onclick="window.commentsSignInWithGoogle()"><i class="fab fa-google"></i> Google</button>
+                    <button class="btn-email" onclick="window.commentsToggleAuthForm('login')"><i class="fas fa-envelope"></i> 邮箱登录</button>
+                </div>
+                <div class="comment-auth-form" id="emailAuthForm" style="display:none;">
+                    <input type="email" id="commentEmail" placeholder="邮箱地址">
+                    <input type="password" id="commentPassword" placeholder="密码">
+                    <input type="text" id="commentNickname" placeholder="昵称（注册时填写）">
+                    <div class="auth-form-btns">
+                        <button onclick="window.commentsSignIn()" class="btn-primary">登录</button>
+                        <button onclick="window.commentsSignUp()" class="btn-secondary">注册</button>
+                        <button onclick="window.commentsToggleAuthForm('hide')" class="btn-text">取消</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 评论表单 -->
+            <div class="comment-form" id="commentForm">
+                <textarea id="commentContent" placeholder="写下你的看法... (最多500字)"></textarea>
+                <button id="submitComment" onclick="window.commentsSubmitComment()"><i class="fas fa-paper-plane"></i> 发布评论</button>
+            </div>
+
+            <!-- 评论列表 -->
+            <div class="comments-list" id="commentsList">
+                <div class="comment-loading"><i class="fas fa-spinner fa-spin"></i> 加载中...</div>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -299,6 +335,8 @@
         </div>
     </footer>
 
+    <script src="config.js"></script>
+    <script src="comments.js"></script>
     <script src="common.js"></script>
 </body>
 </html>
