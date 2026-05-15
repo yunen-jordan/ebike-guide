@@ -1,6 +1,17 @@
+# robots.txt for rushbike.top
+
 User-agent: *
 Allow: /
-Disallow: /review-template.html
-Disallow: /baidu_verify_codeva-V8FIb5HVeW.html
 
 Sitemap: https://rushbike.top/sitemap.xml
+
+# 禁止爬取敏感目录
+Disallow: /.git/
+Disallow: /.codebuddy/
+
+# 允许所有搜索引擎爬取
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Googlebot
+Allow: /
