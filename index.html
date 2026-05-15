@@ -1022,28 +1022,27 @@
             padding: 30px;
         }
         
-        .brand-logo-item {
-            flex-direction: column;
-            gap: 0;
-        }
-        
-        .brand-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+        .gallery-item {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
-            color: white;
-            margin-bottom: 0;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            padding: 20px;
         }
         
-        .brand-logo-item:hover .brand-icon {
-            transform: scale(1.15) rotate(10deg);
-            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.5);
+        .gallery-item img {
+            width: auto;
+            height: 70px;
+            max-width: 80%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.85;
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            opacity: 1;
+            filter: brightness(0) invert(1) drop-shadow(0 0 15px rgba(102, 126, 234, 0.6));
         }
         
         .gallery-overlay {
@@ -1639,71 +1638,71 @@
             </div>
             
             <div class="gallery-grid">
-                <div class="gallery-item brand-logo-item">
-                    <div class="brand-icon" style="background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);"><i class="fas fa-bolt"></i></div>
+                <div class="gallery-item">
+                    <img src="brands/yadea.png" alt="雅迪">
                     <div class="gallery-overlay">
                         <h4>雅迪 YADEA</h4>
                         <p>超长续航，智能出行 💨</p>
                     </div>
                 </div>
-                <div class="gallery-item brand-logo-item">
-                    <div class="brand-icon" style="background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);"><i class="fas fa-heart"></i></div>
+                <div class="gallery-item">
+                    <img src="brands/aima.png" alt="爱玛">
                     <div class="gallery-overlay">
                         <h4>爱玛 AIMA</h4>
                         <p>时尚外观，强劲动力 ⚡</p>
                     </div>
                 </div>
-                <div class="gallery-item brand-logo-item">
-                    <div class="brand-icon" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);"><i class="fas fa-bull"></i></div>
+                <div class="gallery-item">
+                    <img src="brands/niu.png" alt="小牛">
                     <div class="gallery-overlay">
                         <h4>小牛 NIU</h4>
                         <p>科技感十足，智能互联 🤖</p>
                     </div>
                 </div>
-                <div class="gallery-item brand-logo-item">
-                    <div class="brand-icon" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);"><i class="fas fa-robot"></i></div>
+                <div class="gallery-item">
+                    <img src="brands/ninebot.png" alt="九号">
                     <div class="gallery-overlay">
                         <h4>九号 NINEBOT</h4>
                         <p>自动驾驶，智能防盗 🛡️</p>
                     </div>
                 </div>
-                <div class="gallery-item brand-logo-item">
-                    <div class="brand-icon" style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%);"><i class="fas fa-sun"></i></div>
+                <div class="gallery-item">
+                    <img src="brands/sunra.png" alt="新日">
                     <div class="gallery-overlay">
                         <h4>新日 SUNRA</h4>
                         <p>性价比之选，品质保障 💪</p>
                     </div>
                 </div>
-                <div class="gallery-item brand-logo-item">
-                    <div class="brand-icon" style="background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);"><i class="fas fa-flag"></i></div>
+                <div class="gallery-item">
+                    <img src="brands/tailg.png" alt="台铃">
                     <div class="gallery-overlay">
                         <h4>台铃 TAILG</h4>
                         <p>云动力长续航，300km不是梦 🛣️</p>
                     </div>
                 </div>
-                <div class="gallery-item brand-logo-item">
-                    <div class="brand-icon" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);"><i class="fas fa-tint"></i></div>
+                <div class="gallery-item">
+                    <img src="brands/luyuan.png" alt="绿源">
                     <div class="gallery-overlay">
                         <h4>绿源 LUYUA</h4>
                         <p>液冷技术，6年质保 🔧</p>
                     </div>
                 </div>
-                <div class="gallery-item brand-logo-item">
-                    <div class="brand-icon" style="background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);"><i class="fas fa-rocket"></i></div>
+                <div class="gallery-item">
+                    <img src="brands/ceedeep.png" alt="极核">
                     <div class="gallery-overlay">
                         <h4>极核 CEEDEEP</h4>
                         <p>摩企基因，操控之王 🏁</p>
                     </div>
                 </div>
-                <div class="gallery-item brand-logo-item">
-                    <div class="brand-icon" style="background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%);"><i class="fas fa-knife-kitchen"></i></div>
+                <div class="gallery-item">
+                    <img src="brands/xdao.png" alt="小刀">
                     <div class="gallery-overlay">
                         <h4>小刀 XDAO</h4>
                         <p>双动力系统，爬坡能手 ⛰️</p>
                     </div>
                 </div>
-                <div class="gallery-item brand-logo-item">
-                    <div class="brand-icon" style="background: linear-gradient(135deg, #d63031 0%, #ff7675 100%);"><i class="fas fa-bird"></i></div>
+                <div class="gallery-item">
+                    <img src="brands/phoenix.png" alt="凤凰">
                     <div class="gallery-overlay">
                         <h4>凤凰 PHOENIX</h4>
                         <p>百年品牌，经济耐用 🏛️</p>
