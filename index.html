@@ -173,6 +173,39 @@
             transform: translateX(4px);
         }
         
+        /* 英雄区域登录按钮 */
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .hero-login-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--accent-cyan);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid var(--accent-cyan);
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+        }
+        
+        .hero-login-btn:hover {
+            background: var(--accent-gradient);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(0, 242, 254, 0.4);
+        }
+        
         /* 现代化内容区域 */
         .section-title {
             text-align: center;
@@ -878,6 +911,17 @@
                 font-size: 1rem;
             }
             
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-login-btn, .cta-button {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
             .calculator-form {
                 grid-template-columns: 1fr;
             }
@@ -1327,9 +1371,14 @@
             </div>
             <h2>2026电动车<span>选购 & 升级指南</span> 🚀</h2>
             <p>新国标政策解读 | 主流品牌对比 | 合法升级方案 | 智能续航计算器，助你选对车、骑得爽！</p>
-            <a href="#buying-guide" class="cta-button">
-                开始探索 <i class="fas fa-arrow-right"></i>
-            </a>
+            <div class="hero-actions">
+                <a href="#buying-guide" class="cta-button">
+                    开始探索 <i class="fas fa-arrow-right"></i>
+                </a>
+                <button class="hero-login-btn" onclick="window.toggleLoginPanel()">
+                    <i class="fas fa-user"></i> 登录 / 注册
+                </button>
+            </div>
         </div>
     </section>
     
