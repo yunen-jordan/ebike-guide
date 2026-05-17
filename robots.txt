@@ -1,17 +1,35 @@
 # robots.txt for rushbike.top
+# 更新时间: 2026-05-17
 
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
 
 Sitemap: https://rushbike.top/sitemap.xml
 
 # 禁止爬取敏感目录
 Disallow: /.git/
 Disallow: /.codebuddy/
+Disallow: /node_modules/
 
-# 允许所有搜索引擎爬取
+# 百度蜘蛛
 User-agent: Baiduspider
 Allow: /
+Crawl-delay: 1
 
+# Google蜘蛛
 User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# 360搜索
+User-agent: 360Spider
+Allow: /
+
+# 搜狗搜索
+User-agent: Sogou web spider
+Allow: /
+
+# 必应
+User-agent: bingbot
 Allow: /
