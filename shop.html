@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精选商城 | rushbike 官方商城</title>
+    <meta name="description" content="精选电动自行车整车与配件，雅迪、九号、小牛等热门品牌，官方正品保障，好货低价！">
+    <meta name="keywords" content="电动车,电动自行车,雅迪,九号,小牛,爱玛,绿源,新日,购车推荐">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+        /* 页面头部 */
+        .page-header {
+            background: linear-gradient(180deg, 
+                rgba(102, 126, 234, 0.3) 0%, 
+                rgba(245, 87, 108, 0.2) 50%,
+                transparent 100%);
+            padding: 140px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--glass-bg);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: var(--transition);
+            border: 1px solid var(--glass-border);
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        .back-home:hover {
+            background: var(--accent-gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* 京东风格商品卡片网格 */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            padding: 20px 0 60px;
+        }
+
+        .jd-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .jd-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        }
+
+        /* 品牌标签条 */
+        .jd-card-brand-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            background: #f7f7f7;
+            border-bottom: 1px solid #eee;
+        }
+
+        .jd-brand-tags {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .jd-brand-tag {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #e4393c;
+            background: #fff0ef;
+            border: 1px solid #ffcdd2;
+        }
+
+        .jd-brand-tag.blue {
+            color: #1976d2;
+            background: #e3f2fd;
+            border-color: #bbdefb;
+        }
+
+        .jd-brand-tag.orange {
+            color: #e65100;
+            background: #fff3e0;
+            border-color: #ffe0b2;
+        }
+
+        /* 限量补贴角标 */
+        .jd-subsidy-badge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, #ff4444 0%, #e4393c 100%);
+            color: white;
+            padding: 4px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            z-index: 5;
+            border-radius: 8px 0 8px 0;
+        }
+
+        .jd-subsidy-badge::before {
+            content: '🔥';
+            margin-right: 4px;
+        }
+
+        /* 商品图片区 */
+        .jd-card-img {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .jd-card-img img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .jd-card:hover .jd-card-img img {
+            transform: scale(1.08);
+        }
+
+        /* 无图片时的占位 */
+        .jd-img-placeholder {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 3.5rem;
+        }
+
+        /* 商品信息区 */
+        .jd-card-info {
+            padding: 14px;
+        }
+
+        .jd-card-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.4;
+            height: 40px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 10px;
+        }
+
+        /* 价格区域 */
+        .jd-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .jd-price-current {
+            color: #e4393c;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .jd-price-current::before {
+            content: '¥';
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .jd-price-original {
+            color: #999;
+            font-size: 12px;
+            text-decoration: line-through;
+        }
+
+        /* 优惠信息 */
+        .jd-coupon-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .jd-coupon-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .jd-coupon-tag.red {
+            background: #fff0f0;
+            color: #e4393c;
+            border: 1px solid #ffcdd2;
+        }
+
+        .jd-coupon-tag.orange {
+            background: #fff8e1;
+            color: #f57c00;
+            border: 1px solid #ffe082;
+        }
+
+        .jd-coupon-value {
+            font-weight: 800;
+            margin-left: 2px;
+        }
+
+        /* 底部信息栏 */
+        .jd-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            border-top: 1px dashed #eee;
+        }
+
+        .jd-shop-info {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .jd-shop-badge {
+            padding: 1px 6px;
+            background: #e8f5e9;
+            color: #388e3c;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .jd-review-count {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .jd-action-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 5px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .jd-btn-link {
+            background: #f5f5f5;
+            color: #666;
+        }
+
+        .jd-btn-link:hover {
+            background: #e4393c;
+            color: white;
+        }
+
+        .jd-btn-promote {
+            background: linear-gradient(135deg, #ff6b35 0%, #e4393c 100%);
+            color: white;
+        }
+
+        .jd-btn-promote:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(228, 57, 60, 0.35);
+        }
+
+        /* 不同品牌配色 */
+        .jd-yadea { background: linear-gradient(180deg, #fef7ee 0%, #fff 100%); }
+        .jd-ninebot { background: linear-gradient(180deg, #eef5ff 0%, #fff 100%); }
+        .jd-niu { background: linear-gradient(180deg, #f0f0f0 0%, #fff 100%); }
+        .jd-aima { background: linear-gradient(180deg, #fef0f0 0%, #fff 100%); }
+        .jd-luyang { background: linear-gradient(180deg, #e8f5e9 0%, #fff 100%); }
+        .jd-sunra { background: linear-gradient(180deg, #fff8e1 0%, #fff 100%); }
+        .jd-default { background: linear-gradient(180deg, #f5f5f5 0%, #fff 100%); }
+
+        /* 分类标题栏 */
+        .section-title-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 30px 0 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e4393c;
+        }
+
+        .section-title-bar h2 {
+            font-size: 1.4rem;
+            color: #333;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .section-title-bar .subtitle {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* 底部横幅 */
+        .jd-banner {
+            background: linear-gradient(135deg, #e4393c 0%, #ff6b35 50%, #e4393c 100%);
+            border-radius: 16px;
+            padding: 36px;
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .jd-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .jd-banner h3 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .jd-banner p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .jd-banner-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: #e4393c;
+            padding: 14px 42px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .jd-banner-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .shop-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 10px 0 40px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .jd-card-img {
+                height: 150px;
+            }
+            
+            .jd-card-info {
+                padding: 10px;
+            }
+            
+            .jd-card-name {
+                font-size: 12px;
+                height: 34px;
+            }
+            
+            .jd-price-current {
+                font-size: 17px;
+            }
+            
+            .jd-banner {
+                padding: 24px 16px;
+            }
+            
+            .jd-banner h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .shop-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7047926bb663d01433ae3a4f7db2bbec";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>rushbike</h1>
+                    <p>⚡ 年轻人的出行神器</p>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="reviews.html">评测</a></li>
+                    <li><a href="faq.html">常见问题</a></li>
+                    <li><a href="budget.html">预算推荐</a></li>
+                    <li><a href="upgrade.html">升级改装</a></li>
+                    <li><a href="accessories.html">配件选购</a></li>
+                    <li><a href="brands.html">品牌对比</a></li>
+                </ul>
+            </nav>
+
+            <!-- 用户登录卡片 -->
+            <div class="user-login-card" id="userLoginCard">
+                <div class="login-prompt" id="loginPrompt">
+                    <button class="login-btn" onclick="window.toggleLoginPanel()">
+                        <i class="fas fa-user"></i> 登录
+                    </button>
+                </div>
+                <div class="login-panel" id="loginPanel" style="display: none;">
+                    <div class="login-panel-header">
+                        <span>登录 / 注册</span>
+                        <button onclick="window.toggleLoginPanel()" class="close-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="login-panel-body">
+                        <button class="oauth-btn btn-github" onclick="window.commentsSignInWithGithub()">
+                            <i class="fab fa-github"></i> GitHub
+                        </button>
+                        <button class="oauth-btn btn-google" onclick="window.commentsSignInWithGoogle()">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <div class="divider"><span>或</span></div>
+                        <input type="email" id="homeCommentEmail" placeholder="邮箱地址">
+                        <input type="password" id="homeCommentPassword" placeholder="密码">
+                        <div class="auth-form-btns">
+                            <button onclick="window.homeSignIn()" class="btn-primary">登录</button>
+                            <button onclick="window.homeSignUp()" class="btn-secondary">注册</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <img id="userAvatar" src="" alt="avatar">
+                    <span id="userName"></span>
+                    <button onclick="window.commentsSignOut()" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <a href="index.html" class="back-home">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            <h1>🛒 精选商城</h1>
+            <p>热门电动自行车 · 正品保障 · 限时补贴</p>
+        </div>
+    </section>
+
+    <div class="container" style="padding: 0 0 60px;">
+        
+        <!-- 热门车型推荐 -->
+        <div class="section-title-bar">
+            <h2>🔥 热门车型推荐</h2>
+            <span class="subtitle">限时补贴中，手慢无！</span>
+        </div>
+
+        <div class="shop-grid">
+            <!-- 雅迪 MODOA5 -->
+            <div class="jd-card jd-yadea">
+                <div class="jd-subsidy-badge">限量补贴</div>
+                <div class="jd-card-brand-bar">
+                    <div class="jd-brand-tags">
+                        <span class="jd-brand-tag">雅迪</span>
+                        <span class="jd-brand-tag blue">618</span>
+                    </div>
+                </div>
+                <div class="jd-card-img">
+                    <div class="jd-img-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                        🛵
+                    </div>
+                </div>
+                <div class="jd-card-info">
+                    <h3 class="jd-card-name">雅迪 MODOA5 新国标电动自行车 轻便代步 续航持久</h3>
+                    <div class="jd-price-row">
+                        <span class="jd-price-current">2349</span>
+                        <span class="jd-price-original">¥2699</span>
+                        <span style="font-size:11px;color:#e4393c;font-weight:600;">返利1%</span>
+                    </div>
+                    <div class="jd-coupon-row">
+                        <span class="jd-coupon-tag red">跨店<span class="jd-coupon-value">每300减50</span></span>
+                        <span class="jd-coupon-tag orange">评价数<span class="jd-coupon-value">500+</span></span>
+                    </div>
+                    <div class="jd-card-footer">
+                        <div class="jd-shop-info">
+                            <span class="jd-shop-badge">旗舰店</span>
+                            <span>绿能电动车官方旗舰店</span>
+                        </div>
+                        <span class="jd-review-count">500+评价</span>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:6px;">
+                        <button class="jd-action-btn jd-btn-promote" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-shopping-cart"></i> 购买
+                        </button>
+                        <button class="jd-action-btn jd-btn-link" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-ticket-alt"></i> 优惠领取
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 九号 M85C (唯一带推广链接的卡片) -->
+            <a href="https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BAUsJK1olWAcGXV1dDkMUBl8IGloSVAcFXF1UAUkXCl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWAmgBGlwdXg8LVl5UFxJSXzIGXwRNA1l-AAsFWC5HVWMLdVp7XTZaFTlVFgx1WApsATBrOUVdDyU-WhJnD2M4GmsWXAQLVFxbAU0SM18IHGtUMwYDUV1aDUMWM244G10TVA4CV15bDEkeCl8PG1IliZOUgdHM3_K31_uEz8KlbTYyV25aCEIDBR1JSU8TLzYyVG5eOEsWA24MGF0RXgQKSF5ZCU8WBXMIHV0cVQYCUltbAUsfM20JGl8cbTbc2e47Dy1SdhwPSB1FAGUHMxkF1sanEhN_H1wcXRcyPzU4aRZuVxlabV5tG0ZyCjY4DQ1PWRh3eSh7X0FRMT8AcR9hUSl7Xh5AB2F4ZFttC00TAmY4" target="_blank" class="jd-card jd-ninebot">
+                <div class="jd-subsidy-badge">限量补贴</div>
+                <div class="jd-card-brand-bar">
+                    <div class="jd-brand-tags">
+                        <span class="jd-brand-tag">九号</span>
+                        <span class="jd-brand-tag orange">新品</span>
+                    </div>
+                </div>
+                <div class="jd-card-img">
+                    <div class="jd-img-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+                        🛵
+                    </div>
+                </div>
+                <div class="jd-card-info">
+                    <h3 class="jd-card-name">九号(Ninebot) M85C 智能电动车 新国标长续航版</h3>
+                    <div class="jd-price-row">
+                        <span class="jd-price-current">3799</span>
+                        <span class="jd-price-original">¥4598</span>
+                        <span style="font-size:11px;color:#e4393c;font-weight:600;">返利1%</span>
+                    </div>
+                    <div class="jd-coupon-row">
+                        <span class="jd-coupon-tag red">跨店<span class="jd-coupon-value">每300减50</span></span>
+                        <span class="jd-coupon-tag orange">评价数<span class="jd-coupon-value">4499+</span></span>
+                    </div>
+                    <div class="jd-card-footer">
+                        <div class="jd-shop-info">
+                            <span class="jd-shop-badge">旗舰店</span>
+                            <span>ninebot九号电动出行...</span>
+                        </div>
+                        <span class="jd-review-count">1.07万+评价</span>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:6px;">
+                        <button class="jd-action-btn jd-btn-promote" onclick="event.stopPropagation(); window.open('https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BAUsJK1olWAcGXV1dDkMUBl8IGloSVAcFXF1UAUkXCl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWAmgBGlwdXg8LVl5UFxJSXzIGXwRNA1l-AAsFWC5HVWMLdVp7XTZaFTlVFgx1WApsATBrOUVdDyU-WhJnD2M4GmsWXAQLVFxbAU0SM18IHGtUMwYDUV1aDUMWM244G10TVA4CV15bDEkeCl8PG1IliZOUgdHM3_K31_uEz8KlbTYyV25aCEIDBR1JSU8TLzYyVG5eOEsWA24MGF0RXgQKSF5ZCU8WBXMIHV0cVQYCUltbAUsfM20JGl8cbTbc2e47Dy1SdhwPSB1FAGUHMxkF1sanEhN_H1wcXRcyPzU4aRZuVxlabV5tG0ZyCjY4DQ1PWRh3eSh7X0FRMT8AcR9hUSl7Xh5AB2F4ZFttC00TAmY4')">
+                            <i class="fas fa-shopping-cart"></i> 购买
+                        </button>
+                        <button class="jd-action-btn jd-btn-link" onclick="event.stopPropagation(); window.open('https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BAUsJK1olWAcGXV1dDkMUBl8IGloSVAcFXF1UAUkXCl9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWAmgBGlwdXg8LVl5UFxJSXzIGXwRNA1l-AAsFWC5HVWMLdVp7XTZaFTlVFgx1WApsATBrOUVdDyU-WhJnD2M4GmsWXAQLVFxbAU0SM18IHGtUMwYDUV1aDUMWM244G10TVA4CV15bDEkeCl8PG1IliZOUgdHM3_K31_uEz8KlbTYyV25aCEIDBR1JSU8TLzYyVG5eOEsWA24MGF0RXgQKSF5ZCU8WBXMIHV0cVQYCUltbAUsfM20JGl8cbTbc2e47Dy1SdhwPSB1FAGUHMxkF1sanEhN_H1wcXRcyPzU4aRZuVxlabV5tG0ZyCjY4DQ1PWRh3eSh7X0FRMT8AcR9hUSl7Xh5AB2F4ZFttC00TAmY4')">
+                            <i class="fas fa-ticket-alt"></i> 优惠领取
+                        </button>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 雅迪 F20 -->
+            <div class="jd-card jd-yadea">
+                <div class="jd-subsidy-badge">限量补贴</div>
+                <div class="jd-card-brand-bar">
+                    <div class="jd-brand-tags">
+                        <span class="jd-brand-tag">雅迪</span>
+                        <span class="jd-brand-tag blue">热卖</span>
+                    </div>
+                </div>
+                <div class="jd-card-img">
+                    <div class="jd-img-placeholder" style="background: linear-gradient(135deg, #fddb92 0%, #d1fdff 100%);">
+                        🛵
+                    </div>
+                </div>
+                <div class="jd-card-info">
+                    <h3 class="jd-card-name">雅迪 F20 新国标电动自行车 时尚外观 长续航</h3>
+                    <div class="jd-price-row">
+                        <span class="jd-price-current">2749</span>
+                        <span class="jd-price-original">¥3399</span>
+                        <span style="font-size:11px;color:#e4393c;font-weight:600;">返利1%</span>
+                    </div>
+                    <div class="jd-coupon-row">
+                        <span class="jd-coupon-tag red">跨店<span class="jd-coupon-value">每200减30</span></span>
+                        <span class="jd-coupon-tag orange">评价数<span class="jd-coupon-value">2399+</span></span>
+                    </div>
+                    <div class="jd-card-footer">
+                        <div class="jd-shop-info">
+                            <span class="jd-shop-badge">旗舰店</span>
+                            <span>探摩「门店自提」群款智能电...</span>
+                        </div>
+                        <span class="jd-review-count">2399+评价</span>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:6px;">
+                        <button class="jd-action-btn jd-btn-promote" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-shopping-cart"></i> 购买
+                        </button>
+                        <button class="jd-action-btn jd-btn-link" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-ticket-alt"></i> 优惠领取
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 九号 N70C -->
+            <div class="jd-card jd-ninebot">
+                <div class="jd-subsidy-badge">限量补贴</div>
+                <div class="jd-card-brand-bar">
+                    <div class="jd-brand-tags">
+                        <span class="jd-brand-tag">九号</span>
+                        <span class="jd-brand-tag orange">2025</span>
+                    </div>
+                </div>
+                <div class="jd-card-img">
+                    <div class="jd-img-placeholder" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);">
+                        🛵
+                    </div>
+                </div>
+                <div class="jd-card-info">
+                    <h3 class="jd-card-name">九号(Ninebot) N70C 2025款 智能电动摩托车 高性能版</h3>
+                    <div class="jd-price-row">
+                        <span class="jd-price-current">2999</span>
+                        <span class="jd-price-original">¥3998</span>
+                        <span style="font-size:11px;color:#e4393c;font-weight:600;">返利1%</span>
+                    </div>
+                    <div class="jd-coupon-row">
+                        <span class="jd-coupon-tag red">限时<span class="jd-coupon-value">立减500元</span></span>
+                        <span class="jd-coupon-tag orange">评价数<span class="jd-coupon-value">800+</span></span>
+                    </div>
+                    <div class="jd-card-footer">
+                        <div class="jd-shop-info">
+                            <span class="jd-shop-badge">旗舰店</span>
+                            <span>ninebot九号电动出行...</span>
+                        </div>
+                        <span class="jd-review-count">3499+评价</span>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:6px;">
+                        <button class="jd-action-btn jd-btn-promote" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-shopping-cart"></i> 购买
+                        </button>
+                        <button class="jd-action-btn jd-btn-link" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-ticket-alt"></i> 优惠领取
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 九号 N3 -->
+            <div class="jd-card jd-ninebot">
+                <div class="jd-subsidy-badge">限量补贴</div>
+                <div class="jd-card-brand-bar">
+                    <div class="jd-brand-tags">
+                        <span class="jd-brand-tag">九号</span>
+                        <span class="jd-brand-tag orange">新国标</span>
+                    </div>
+                </div>
+                <div class="jd-card-img">
+                    <div class="jd-img-placeholder" style="background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);">
+                        🛵
+                    </div>
+                </div>
+                <div class="jd-card-info">
+                    <h3 class="jd-card-name">九号(Ninebot) N3 电动助力车 新国标 智能解锁</h3>
+                    <div class="jd-price-row">
+                        <span class="jd-price-current">3599</span>
+                        <span class="jd-price-original">¥4099</span>
+                        <span style="font-size:11px;color:#e4393c;font-weight:600;">返利1%</span>
+                    </div>
+                    <div class="jd-coupon-row">
+                        <span class="jd-coupon-tag red">限时<span class="jd-coupon-value">立减500元</span></span>
+                        <span class="jd-coupon-tag orange">评价数<span class="jd-coupon-value">4099+</span></span>
+                    </div>
+                    <div class="jd-card-footer">
+                        <div class="jd-shop-info">
+                            <span class="jd-shop-badge">旗舰店</span>
+                            <span>ninebot九号电动助力行...</span>
+                        </div>
+                        <span class="jd-review-count">1000+评价</span>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:6px;">
+                        <button class="jd-action-btn jd-btn-promote" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-shopping-cart"></i> 购买
+                        </button>
+                        <button class="jd-action-btn jd-btn-link" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-ticket-alt"></i> 优惠领取
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 小牛 GOVA F0 -->
+            <div class="jd-card jd-niu">
+                <div class="jd-subsidy-badge">限量补贴</div>
+                <div class="jd-card-brand-bar">
+                    <div class="jd-brand-tags">
+                        <span class="jd-brand-tag">小牛</span>
+                        <span class="jd-brand-tag blue">经典</span>
+                    </div>
+                </div>
+                <div class="jd-card-img">
+                    <div class="jd-img-placeholder" style="background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);">
+                        🛵
+                    </div>
+                </div>
+                <div class="jd-card-info">
+                    <h3 class="jd-card-name">小牛GOVA F0 新国标电动自行车 智能APP互联</h3>
+                    <div class="jd-price-row">
+                        <span class="jd-price-current">2999</span>
+                        <span class="jd-price-original">¥3599</span>
+                        <span style="font-size:11px;color:#e4393c;font-weight:600;">返利1%</span>
+                    </div>
+                    <div class="jd-coupon-row">
+                        <span class="jd-coupon-tag red">限时<span class="jd-coupon-value">立减400元</span></span>
+                        <span class="jd-coupon-tag orange">评价数<span class="jd-coupon-value">2000+</span></span>
+                    </div>
+                    <div class="jd-card-footer">
+                        <div class="jd-shop-info">
+                            <span class="jd-shop-badge">旗舰店</span>
+                            <span>小牛电动官方旗舰店</span>
+                        </div>
+                        <span class="jd-review-count">2000+评价</span>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:6px;">
+                        <button class="jd-action-btn jd-btn-promote" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-shopping-cart"></i> 购买
+                        </button>
+                        <button class="jd-action-btn jd-btn-link" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-ticket-alt"></i> 优惠领取
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 更多热门车型 -->
+        <div class="section-title-bar">
+            <h2>⭐ 品牌精选</h2>
+            <span class="subtitle">更多高性价比选择</span>
+        </div>
+
+        <div class="shop-grid">
+            <!-- 爱玛 小蜜豆 -->
+            <div class="jd-card jd-aima">
+                <div class="jd-card-brand-bar">
+                    <div class="jd-brand-tags">
+                        <span class="jd-brand-tag">爱玛</span>
+                        <span class="jd-brand-tag blue">热销</span>
+                    </div>
+                </div>
+                <div class="jd-card-img">
+                    <div class="jd-img-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                        🛵
+                    </div>
+                </div>
+                <div class="jd-card-info">
+                    <h3 class="jd-card-name">爱玛 小蜜豆 新国标电动自行车 时尚可爱款</h3>
+                    <div class="jd-price-row">
+                        <span class="jd-price-current">1899</span>
+                        <span class="jd-price-original">¥2399</span>
+                        <span style="font-size:11px;color:#e4393c;font-weight:600;">返利1%</span>
+                    </div>
+                    <div class="jd-coupon-row">
+                        <span class="jd-coupon-tag red">限时<span class="jd-coupon-value">减200</span></span>
+                    </div>
+                    <div class="jd-card-footer">
+                        <div class="jd-shop-info">
+                            <span class="jd-shop-badge">旗舰店</span>
+                            <span>爱玛电动车官方店</span>
+                        </div>
+                        <span class="jd-review-count">3000+评价</span>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:6px;">
+                        <button class="jd-action-btn jd-btn-promote" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-shopping-cart"></i> 购买
+                        </button>
+                        <button class="jd-action-btn jd-btn-link" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-ticket-alt"></i> 优惠领取
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 绿源 INNO7 -->
+            <div class="jd-card jd-luyang">
+                <div class="jd-card-brand-bar">
+                    <div class="jd-brand-tags">
+                        <span class="jd-brand-tag">绿源</span>
+                        <span class="jd-brand-tag orange">液冷</span>
+                    </div>
+                </div>
+                <div class="jd-card-img">
+                    <div class="jd-img-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        🛵
+                    </div>
+                </div>
+                <div class="jd-card-info">
+                    <h3 class="jd-card-name">绿源 INNO7 液冷电机电动自行车 超长续航</h3>
+                    <div class="jd-price-row">
+                        <span class="jd-price-current">2699</span>
+                        <span class="jd-price-original">¥3299</span>
+                        <span style="font-size:11px;color:#e4393c;font-weight:600;">返利1%</span>
+                    </div>
+                    <div class="jd-coupon-row">
+                        <span class="jd-coupon-tag red">限时<span class="jd-coupon-value">减400</span></span>
+                    </div>
+                    <div class="jd-card-footer">
+                        <div class="jd-shop-info">
+                            <span class="jd-shop-badge">旗舰店</span>
+                            <span>绿源电动车官方店</span>
+                        </div>
+                        <span class="jd-review-count">1500+评价</span>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:6px;">
+                        <button class="jd-action-btn jd-btn-promote" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-shopping-cart"></i> 购买
+                        </button>
+                        <button class="jd-action-btn jd-btn-link" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-ticket-alt"></i> 优惠领取
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 新日 XC3 -->
+            <div class="jd-card jd-sunra">
+                <div class="jd-card-brand-bar">
+                    <div class="jd-brand-tags">
+                        <span class="jd-brand-tag">新日</span>
+                        <span class="jd-brand-tag blue">锂电</span>
+                    </div>
+                </div>
+                <div class="jd-card-img">
+                    <div class="jd-img-placeholder" style="background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);">
+                        🛵
+                    </div>
+                </div>
+                <div class="jd-card-info">
+                    <h3 class="jd-card-name">新日 XC3 锂电池电动自行车 超轻便携</h3>
+                    <div class="jd-price-row">
+                        <span class="jd-price-current">2199</span>
+                        <span class="jd-price-original">¥2799</span>
+                        <span style="font-size:11px;color:#e4393c;font-weight:600;">返利1%</span>
+                    </div>
+                    <div class="jd-coupon-row">
+                        <span class="jd-coupon-tag red">限时<span class="jd-coupon-value">减300</span></span>
+                    </div>
+                    <div class="jd-card-footer">
+                        <div class="jd-shop-info">
+                            <span class="jd-shop-badge">旗舰店</span>
+                            <span>新日电动车官方店</span>
+                        </div>
+                        <span class="jd-review-count">1200+评价</span>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:6px;">
+                        <button class="jd-action-btn jd-btn-promote" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-shopping-cart"></i> 购买
+                        </button>
+                        <button class="jd-action-btn jd-btn-link" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-ticket-alt"></i> 优惠领取
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 台铃 超能S -->
+            <div class="jd-card jd-default">
+                <div class="jd-card-brand-bar">
+                    <div class="jd-brand-tags">
+                        <span class="jd-brand-tag">台铃</span>
+                        <span class="jd-brand-tag orange">超能</span>
+                    </div>
+                </div>
+                <div class="jd-card-img">
+                    <div class="jd-img-placeholder" style="background: linear-gradient(135deg, #c1dfc4 0%, #deecdd 100%);">
+                        🛵
+                    </div>
+                </div>
+                <div class="jd-card-info">
+                    <h3 class="jd-card-name">台铃 超能S 新国标电动自行车 省电跑更远</h3>
+                    <div class="jd-price-row">
+                        <span class="jd-price-current">1999</span>
+                        <span class="jd-price-original">¥2599</span>
+                        <span style="font-size:11px;color:#e4393c;font-weight:600;">返利1%</span>
+                    </div>
+                    <div class="jd-coupon-row">
+                        <span class="jd-coupon-tag red">限时<span class="jd-coupon-value">减350</span></span>
+                    </div>
+                    <div class="jd-card-footer">
+                        <div class="jd-shop-info">
+                            <span class="jd-shop-badge">旗舰店</span>
+                            <span>台铃电动车官方店</span>
+                        </div>
+                        <span class="jd-review-count">2800+评价</span>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:6px;">
+                        <button class="jd-action-btn jd-btn-promote" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-shopping-cart"></i> 购买
+                        </button>
+                        <button class="jd-action-btn jd-btn-link" disabled style="opacity:0.5;cursor:not-allowed;">
+                            <i class="fas fa-ticket-alt"></i> 优惠领取
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部横幅 (暂无链接) -->
+        <div class="jd-banner">
+            <h3>🎁 更多好物 尽在京东</h3>
+            <p>正品保障 | 闪电配送 | 7天无理由退换 | 售后无忧</p>
+            <a href="javascript:void(0)" class="jd-banner-btn" style="opacity:0.6;cursor:default;" onclick="return false;">
+                <i class="fas fa-shopping-cart"></i> 即将上线
+            </a>
+        </div>
+
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8;">精选电动自行车商城，帮你找到最适合的出行神器！</p>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">🏠 首页</a></li>
+                        <li><a href="shop.html">🛒 商城</a></li>
+                        <li><a href="accessories.html">🛍️ 配件选购</a></li>
+                        <li><a href="brands.html">🏷️ 品牌对比</a></li>
+                        <li><a href="budget.html">💰 预算推荐</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 rushbike. 版权所有. 商品信息来自京东合作商家.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="comments.js"></script>
+    <script src="common.js"></script>
+</body>
+</html>

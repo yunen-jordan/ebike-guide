@@ -1292,6 +1292,135 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* 商城卡片样式 */
+        .shop-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(245, 87, 108, 0.15) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+        
+        .shop-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink), var(--accent-cyan));
+        }
+        
+        .shop-card-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .shop-card-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 35px rgba(245, 87, 108, 0.35);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 12px 35px rgba(245, 87, 108, 0.35); }
+            50% { transform: scale(1.05); box-shadow: 0 16px 45px rgba(245, 87, 108, 0.5); }
+        }
+        
+        .shop-card-icon i {
+            font-size: 2.8rem;
+            color: white;
+        }
+        
+        .shop-card-info h3 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .shop-card-info p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+        
+        .shop-card-tags {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .shop-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--glass-bg);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            border: 1px solid rgba(67, 233, 123, 0.3);
+        }
+        
+        .shop-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+            color: white;
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(245, 87, 108, 0.4);
+        }
+        
+        .shop-card-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(245, 87, 108, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .shop-card {
+                padding: 30px 20px;
+            }
+            .shop-card-icon {
+                width: 80px;
+                height: 80px;
+            }
+            .shop-card-icon i {
+                font-size: 2rem;
+            }
+            .shop-card-info h3 {
+                font-size: 1.5rem;
+            }
+            .shop-card-btn {
+                padding: 14px 36px;
+                font-size: 1rem;
+            }
+        }
     </style>
     <!-- 百度统计 -->
     <script>
@@ -1702,6 +1831,34 @@
                         <p>性价比之王 · 实用之选 💰</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- 商城卡片 -->
+        <section id="shop" style="margin-top: 80px;">
+            <div class="section-title">
+                <h2>🛍️ 官方商城</h2>
+                <p>精选配件与周边正品，好货低价，品质保障！</p>
+            </div>
+            
+            <div class="shop-card" id="shopCard">
+                <div class="shop-card-banner">
+                    <div class="shop-card-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>精选配件商城</h3>
+                        <p>头盔、锁具、车灯、GPS定位器等必备配件，官方正品保障</p>
+                        <div class="shop-card-tags">
+                            <span class="shop-tag"><i class="fas fa-check-circle"></i> 正品保障</span>
+                            <span class="shop-tag"><i class="fas fa-truck"></i> 快递包邮</span>
+                            <span class="shop-tag"><i class="fas fa-undo"></i> 7天退换</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="shop.html" class="shop-card-btn" id="shopCardBtn">
+                    <i class="fas fa-external-link-alt"></i> 进入商城
+                </a>
             </div>
         </section>
         
