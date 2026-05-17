@@ -1,134 +1,142 @@
-# SEO优化周报 - 2026-05-17 (第2次检查)
+# SEO 健康报告
 
-## rushbike.top 每周SEO检查报告
+**网站**: https://rushbike.top
+**检查时间**: 2026-05-17 20:13
+**检查范围**: 37 个 HTML 页面 + sitemap.xml + robots.txt
 
 ---
 
-### 1. 索引状态检查
+## 检查结果汇总
 
-#### Sitemap.xml ✅
-| 项目 | 状态 |
+| 检查项 | 状态 | 详情 |
+|--------|------|------|
+| sitemap.xml | ✅ 通过 | 40 个 URL，格式正确 |
+| robots.txt | ✅ 通过 | 配置完整，含 Sitemap 引用 |
+| 内部锚点链接 | ❌ **7个损坏** | brands.html 缺少 7 个锚点 ID |
+| 页面标题 | ⚠️ 需关注 | 2 个页面使用默认标题 |
+| Meta 描述 | ⚠️ 需关注 | 2 个页面缺少自定义描述 |
+| Canonical 标签 | ⚠️ 部分缺失 | 7 个页面缺少 canonical |
+| 外部链接 | ✅ 通过 | 京东联盟链接正常 |
+
+---
+
+## 1. sitemap.xml 验证 — ✅ 通过
+
+- **状态**: 格式正确，符合 sitemap.org 协议
+- **URL 数量**: 40 个
+- **域名**: 全部指向 `https://rushbike.top/`
+- **更新日期**: 2026-05-17
+- **建议**: 定期更新 lastmod 日期，确保新闻页及时提交
+
+---
+
+## 2. robots.txt 验证 — ✅ 通过
+
+- **Sitemap 引用**: `Sitemap: https://rushbike.top/sitemap.xml` ✅
+- **爬虫规则**: 对百度/Google/360/搜狗/必应均 Allow /
+- **敏感目录屏蔽**: `.git/` `.codebuddy/` `node_modules/` ✅
+- **抓取延迟**: 1 秒（合理）
+- **建议**: 可考虑添加 `Host: rushbike.top`（百度识别）
+
+---
+
+## 3. 内部链接检查 — ⚠️ 7 个损坏锚点
+
+`brands.html` 仅有 2 个锚点（`#yadi`、`#xiaoniu`），但页面内和 `common.js` 引用了 7 个不存在的锚点：
+
+| 损坏锚点 | 出现位置 | 影响 |
+|----------|----------|------|
+| `brands.html#budget` | index.html (3处) | 首页车型推荐区域 |
+| `brands.html#tailing` | index.html, common.js | 台铃品牌对比 |
+| `brands.html#xinri` | index.html | 新日品牌对比 |
+| `brands.html#xiaodao` | index.html | 小刀品牌对比 |
+| `brands.html#luyuan` | common.js | 绿源品牌对比 |
+| `brands.html#aima` | common.js | 爱玛品牌对比 |
+| `brands.html#jihe` | common.js | 极核品牌对比 |
+
+**已确认正常的锚点**:
+- `brands.html#yadi` ✅
+- `brands.html#xiaoniu` ✅
+- `upgrade.html#battery` ✅
+- `upgrade.html#performance` ✅
+- `upgrade.html#safety` ✅
+- `tips.html#legal` ✅
+- `policy.html#ccc` ✅
+- `index.html#buying-guide` ✅
+- `index.html#brand-comparison` ✅
+
+---
+
+## 4. 页面标题和 Meta 描述 — ⚠️ 2 个页面需优化
+
+| 页面 | 问题 |
 |------|------|
-| 文件存在 | ✅ 是 |
-| 页面数量 | 35个 |
-| 更新日期 | 2026-05-17 |
-| 格式规范 | ✅ 符合sitemap.org标准 |
+| `accessories.html` | 标题过于通用，描述缺失 |
+| `maintenance.html` | 标题过于通用，描述缺失 |
 
-**页面分布：**
-- 首页：1个
-- 评测类：4个
-- 信息页：8个（FAQ/预算/品牌/升级等）
-- 新闻动态：21个
-
-#### Robots.txt ✅
-| 爬虫 | 允许状态 |
-|------|---------|
-| Googlebot | ✅ 允许 |
-| Baiduspider | ✅ 允许 |
-| 360Spider | ✅ 允许 |
-| Sogou | ✅ 允许 |
-| bingbot | ✅ 允许 |
-
-**禁止目录：** `/.git/`, `/.codebuddy/`, `/node_modules/`
+其余 35 个页面标题和描述均正常，包含品牌/政策/618 等关键词。
 
 ---
 
-### 2. SEO标签检查
+## 5. Canonical 标签 — ⚠️ 部分缺失
 
-#### 本次修复 ✅
-| 页面 | 修复前问题 | 修复状态 |
-|------|-----------|---------|
-| policy.html | 缺少description/keywords/OG标签 | ✅ 已修复 |
-| tips.html | 缺少Open Graph标签 | ✅ 已修复 |
+以下页面缺少 `<link rel="canonical">` 标签：
+- `accessories.html`
+- `upgrade.html`
+- `tips.html`
+- `maintenance.html`
+- `policy.html`
+- `review-jiuhao.html`
+- `review-guide-2026.html`
+- `review-brands-2026.html`
 
-#### 全部页面SEO标签检查
-| 页面 | Title | Description | Keywords | Open Graph |
-|------|-------|-------------|----------|------------|
-| index.html | ✅ | ✅ | ✅ | ✅ |
-| budget.html | ✅ | ✅ | ✅ | ✅ |
-| brands.html | ✅ | ✅ | ✅ | ✅ |
-| upgrade.html | ✅ | ✅ | ✅ | ✅ |
-| faq.html | ✅ | ✅ | ✅ | ✅ |
-| reviews.html | ✅ | ✅ | ✅ | ✅ |
-| policy.html | ✅ | ✅ 已修复 | ✅ 已修复 | ✅ 已修复 |
-| tips.html | ✅ | ✅ | ✅ | ✅ 已修复 |
-| news-*.html (22个) | ✅ | ✅ | ✅ | ✅ |
-
-**结论：所有页面 SEO 标签配置完善 ✅**
+**影响**: 百度等搜索引擎可能将带参数的 URL 视为重复内容，分散权重。
 
 ---
 
-### 3. 内部链接检查 ✅
+## 严重程度评级
 
-检查了253处内部链接引用：
-- 所有 `.html` 文件链接正常
-- 导航菜单链接完整
-- 页脚链接正常
-- 未发现404错误链接
-
-**内部链接健康度：100% ✅**
-
----
-
-### 4. 关键词密度分析
-
-| 核心关键词 | 密度范围 | 评估 |
-|-----------|---------|------|
-| 电动自行车/电动车 | 1.5%-3% | ✅ 合理 |
-| 618 | 0.5%-1.5% | ✅ 适中 |
-| 新国标 | 0.8%-1.5% | ✅ 良好 |
-| 雅迪/爱玛/九号/小牛 | 0.3%-0.8% | ✅ 自然 |
-| 上牌 | 0.5%-1% | ✅ 良好 |
-| 选购/推荐 | 0.5%-1.2% | ✅ 适中 |
-
-**结论：关键词密度整体优化良好 ✅**
+| 级别 | 数量 | 说明 |
+|------|------|------|
+| 🔴 严重 | 7 | 损坏的锚点链接导致页面功能失效 |
+| 🟡 中等 | 9 | 缺少 canonical 标签 |
+| 🟡 中等 | 2 | 缺少自定义 meta 描述 |
+| 🟢 轻微 | 0 | - |
 
 ---
 
-### 5. 热点关键词覆盖分析
+## 建议修复措施
 
-| 当前热点 | 搜索趋势 | 网站覆盖情况 |
-|---------|---------|--------------|
-| **618电动车大促** | 🔥 热点 | ✅ 首页+多页面覆盖 |
-| **7月1日旧标停上牌** | 🔥 热点 | ✅ FAQ+多页面强调 |
-| **2026新国标落地** | 📈 上升 | ✅ 首页+政策解读 |
-| **国补+满减叠加** | 🔥 热点 | ✅ 首页重点强调 |
-| **碳酸锂涨价** | 📈 上升 | ✅ 升级改装页提及 |
-| **九号/小牛对比** | 📈 稳定 | ✅ 品牌对比页 |
+### 🔴 高优先级（已自动修复）
 
----
+在 `brands.html` 中为以下品牌卡片添加缺失的锚点 ID：
+- `#budget` — 预算推荐区域
+- `#tailing` — 台铃
+- `#xinri` — 新日
+- `#xiaodao` — 小刀
+- `#luyuan` — 绿源
+- `#aima` — 爱玛
+- `#jihe` — 极核
 
-### 6. 本次修复汇总
+### 🟡 中优先级
 
-#### 已修复问题
-1. ✅ `policy.html` - 添加完整SEO meta标签
-2. ✅ `tips.html` - 添加Open Graph标签
-
-#### 部署状态
-- 修改文件：brands.html, policy.html, tips.html, upgrade.html
-- 待部署：是（需运行 deploy.js）
+1. 为 `accessories.html` 和 `maintenance.html` 添加针对性的 `<title>` 和 `<meta name="description">`
+2. 为缺失 canonical 的页面添加 canonical 标签
 
 ---
 
-### 7. 结论与建议
+## 健康评分
 
-#### 本次检查结论
-- ✅ sitemap.xml 配置正确，索引无异常
-- ✅ robots.txt 允许所有主流搜索引擎
-- ✅ 所有页面 SEO meta 标签完善
-- ✅ 内部链接无404错误
-- ✅ 关键词密度优化良好
-- ✅ 当前热点（618、7月停上牌）已充分覆盖
-- ⚠️ 有4个文件已修改，需执行 deploy.js 部署
+**总体评分: 72/100**
 
-#### 优化建议
-1. **立即部署**：运行 deploy.js 将修复的SEO标签部署到生产环境
-2. **内容更新**：618期间保持每日更新新闻/资讯
-3. **外链建设**：在知乎、B站等内容平台发布文章并引用网站
-4. **百度收录**：提交更新后的 sitemap 到百度站长平台
-5. **HTTPS证书**：检查 rushbike.top HTTPS 证书有效性
+| 维度 | 得分 |
+|------|------|
+| sitemap.xml | 95/100 |
+| robots.txt | 90/100 |
+| 内部链接 | 65/100 |
+| Meta SEO | 80/100 |
+| Canonical | 70/100 |
 
 ---
 
-**报告生成时间：** 2026-05-17 20:15
-**下次检查：** 2026-05-24（周日）
+*报告由 seo-2 自动化任务生成 | 2026-05-17*
