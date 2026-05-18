@@ -72,6 +72,7 @@ const translations = {
         
         // FAQ页
         faq_title: "常见问题",
+        faq_h1_full: "❓ 常见问题 FAQ",
         faq_subtitle: "解答选购电动车的常见疑问",
         
         // 预算推荐页
@@ -84,7 +85,7 @@ const translations = {
         
         // 升级改装页
         upgrade_title: "升级改装",
-        upgrade_subtitle: "让你的电动车性能更上一层楼",
+        upgrade_subtitle: "合法合规的前提下，如何让小电驴性能拉满？",
         
         // 保养指南页
         maintenance_title: "保养指南",
@@ -96,7 +97,7 @@ const translations = {
         
         // 官方商城页
         shop_title: "官方商城",
-        shop_subtitle: "正品保障，官方授权",
+        shop_subtitle: "热门电动自行车 · 正品保障 · 限时补贴",
         
         // 政策页
         policy_title: "2026年新国标政策",
@@ -104,7 +105,60 @@ const translations = {
         
         // 上牌指南页
         tips_title: "电动车上牌指南",
-        tips_subtitle: "一文搞懂上牌流程和注意事项",
+        tips_subtitle: "选购电动车必看的10大要点，避免踩雷！",
+        
+        // 升级改装指南
+        upgrade_section_title: "⚡ 升级改装指南",
+        upgrade_section_desc: "合法合规的前提下，如何让小电驴性能拉满？我们有专业升级建议！",
+        upgrade_card_battery: "🔋 电池升级方案",
+        upgrade_card_battery_desc: "铅酸换锂电，48V升级60V/72V方案，双电池并联，安全注意事项全解析！",
+        upgrade_card_performance: "🚀 性能优化方案",
+        upgrade_card_performance_desc: "控制器优化、电机维护、轮胎升级、减震改进，在不超速的前提下提升骑行体验！",
+        upgrade_card_maintenance: "🛠️ 保养指南",
+        upgrade_card_maintenance_desc: "电池保养、轮胎维护、刹车检查、四季养护，让你的小电驴多骑5年！",
+        btn_view_guide: "查看指南",
+        upgrade_card_accessories: "🛒 配件选购",
+        upgrade_card_accessories_desc: "头盔、锁、车灯、GPS定位器等必备配件推荐，帮你的小电驴武装到牙齿！",
+        upgrade_card_safety: "🛡️ 安全强化方案",
+        upgrade_card_safety_desc: "ABS防抱死、TCS牵引力控制、刹车升级、灯光改进，全方位提升骑行安全！",
+        
+        // 品牌对比
+        brand_compare_title: "🏆 主流品牌对比",
+        brand_compare_desc: "自由选择品牌，一键生成对比，帮你做出明智选择！",
+        brand_compare_select: "选择你想对比的品牌（至少2个）",
+        btn_start_compare: "开始对比",
+        
+        // 升级计算器
+        calculator_title: "💡 升级成本计算器",
+        calculator_desc: "根据你的需求和预算，一键计算升级方案的成本和效果！",
+        calculator_battery_label: "当前电池类型",
+        calculator_battery_lead: "铅酸电池 (48V12Ah)",
+        calculator_battery_lithium: "锂电池 (48V20Ah)",
+        calculator_battery_none: "无(新购车)",
+        calculator_range_label: "目标续航 (km)",
+        calculator_range_40: "40-60km",
+        calculator_range_60: "60-80km",
+        calculator_range_80: "80-100km",
+        calculator_range_100: "100km以上",
+        calculator_type_label: "升级类型",
+        calculator_type_battery: "仅电池升级",
+        calculator_type_performance: "性能综合升级",
+        calculator_type_safety: "安全强化升级",
+        calculator_type_full: "全面升级",
+        calculator_budget_label: "预算范围 (元)",
+        calculator_budget_1000: "1000元以下",
+        calculator_budget_2000: "1000-2000元",
+        calculator_budget_3000: "2000-3000元",
+        calculator_budget_5000: "3000-5000元",
+        calculator_btn_calculate: "计算升级方案",
+        calculator_result_title: "🎯 推荐升级方案",
+        calculator_result_battery: "🔋 电池升级：",
+        calculator_result_controller: "⚡ 控制器优化：",
+        calculator_result_brake: "🛑 刹车升级：",
+        calculator_result_tire: "🛞 轮胎升级：",
+        calculator_result_total: "💰 预估总费用：",
+        calculator_result_range: "📈 预计续航提升：",
+        calculator_result_speed: "🚀 预计速度提升：",
         
         // 语言切换
         lang_switch: "EN",
@@ -210,6 +264,7 @@ const translations = {
         
         // FAQ页
         faq_title: "FAQ",
+        faq_h1_full: "❓ FAQ",
         faq_subtitle: "Answers to common e-bike questions",
         
         // 预算推荐页
@@ -222,7 +277,7 @@ const translations = {
         
         // 升级改装页
         upgrade_title: "Upgrades & Mods",
-        upgrade_subtitle: "Upgrade your e-bike performance",
+        upgrade_subtitle: "How to maximize performance legally?",
         
         // 保养指南页
         maintenance_title: "Maintenance Guide",
@@ -234,7 +289,7 @@ const translations = {
         
         // 官方商城页
         shop_title: "Official Shop",
-        shop_subtitle: "Authentic products, official warranty",
+        shop_subtitle: "Popular E-Bikes · Authentic · Limited Subsidy",
         
         // 政策页
         policy_title: "2026 New National Standards",
@@ -242,7 +297,60 @@ const translations = {
         
         // 上牌指南页
         tips_title: "E-Bike Registration Guide",
-        tips_subtitle: "Everything about registration process",
+        tips_subtitle: "10 must-know tips for buying e-bikes!",
+        
+        // 升级改装指南
+        upgrade_section_title: "⚡ Upgrade Guide",
+        upgrade_section_desc: "Learn how to maximize your e-bike's performance legally and safely!",
+        upgrade_card_battery: "🔋 Battery Upgrade",
+        upgrade_card_battery_desc: "Lead-acid to lithium, 48V to 60V/72V, dual battery parallel - safety tips included!",
+        upgrade_card_performance: "🚀 Performance Tune",
+        upgrade_card_performance_desc: "Controller optimization, motor maintenance, tire and suspension upgrades!",
+        upgrade_card_maintenance: "🛠️ Maintenance",
+        upgrade_card_maintenance_desc: "Battery care, tire checks, brake inspection - keep your e-bike running 5 years longer!",
+        btn_view_guide: "View Guide",
+        upgrade_card_accessories: "🛒 Accessories",
+        upgrade_card_accessories_desc: "Helmets, locks, lights, GPS trackers - gear up your e-bike!",
+        upgrade_card_safety: "🛡️ Safety Upgrade",
+        upgrade_card_safety_desc: "ABS, TCS, brake upgrades, lighting improvements for safer rides!",
+        
+        // 品牌对比
+        brand_compare_title: "🏆 Brand Comparison",
+        brand_compare_desc: "Compare brands freely, one-click comparison to help you make the right choice!",
+        brand_compare_select: "Select brands to compare (at least 2)",
+        btn_start_compare: "Compare",
+        
+        // 升级计算器
+        calculator_title: "💡 Upgrade Calculator",
+        calculator_desc: "Calculate upgrade costs and effects based on your needs and budget!",
+        calculator_battery_label: "Current Battery",
+        calculator_battery_lead: "Lead-acid (48V12Ah)",
+        calculator_battery_lithium: "Lithium (48V20Ah)",
+        calculator_battery_none: "None (New Purchase)",
+        calculator_range_label: "Target Range (km)",
+        calculator_range_40: "40-60km",
+        calculator_range_60: "60-80km",
+        calculator_range_80: "80-100km",
+        calculator_range_100: "100km+",
+        calculator_type_label: "Upgrade Type",
+        calculator_type_battery: "Battery Only",
+        calculator_type_performance: "Performance Upgrade",
+        calculator_type_safety: "Safety Upgrade",
+        calculator_type_full: "Full Upgrade",
+        calculator_budget_label: "Budget (CNY)",
+        calculator_budget_1000: "Under ¥1000",
+        calculator_budget_2000: "¥1000-2000",
+        calculator_budget_3000: "¥2000-3000",
+        calculator_budget_5000: "¥3000-5000",
+        calculator_btn_calculate: "Calculate",
+        calculator_result_title: "🎯 Recommended Plan",
+        calculator_result_battery: "🔋 Battery:",
+        calculator_result_controller: "⚡ Controller:",
+        calculator_result_brake: "🛑 Brakes:",
+        calculator_result_tire: "🛞 Tires:",
+        calculator_result_total: "💰 Total Cost:",
+        calculator_result_range: "📈 Range Boost:",
+        calculator_result_speed: "🚀 Speed Boost:",
         
         // 语言切换
         lang_switch: "中文",
