@@ -108,7 +108,32 @@ const translations = {
         
         // 语言切换
         lang_switch: "EN",
-        lang_current: "中文",
+        
+        // 常用按钮
+        btn_view_more: "查看更多",
+        btn_view_details: "查看详情",
+        btn_learn_more: "了解更多",
+        btn_start_shopping: "开始选购",
+        btn_view_plans: "查看方案",
+        btn_view_reviews: "查看评测",
+        btn_view_compare: "查看对比",
+        btn_contact: "联系我们",
+        btn_buy_now: "立即购买",
+        btn_compare: "对比",
+        
+        // 常用词汇
+        pros: "优点",
+        cons: "缺点",
+        features: "特点",
+        specs: "参数",
+        price: "价格",
+        warranty: "质保",
+        battery: "电池",
+        motor: "电机",
+        speed: "速度",
+        range: "续航",
+        weight: "重量",
+        charging: "充电",
         
         // 广告位
         ad_placeholder: "广告位招商中"
@@ -221,7 +246,32 @@ const translations = {
         
         // 语言切换
         lang_switch: "中文",
-        lang_current: "EN",
+        
+        // 常用按钮
+        btn_view_more: "View More",
+        btn_view_details: "View Details",
+        btn_learn_more: "Learn More",
+        btn_start_shopping: "Start Shopping",
+        btn_view_plans: "View Plans",
+        btn_view_reviews: "View Reviews",
+        btn_view_compare: "View Compare",
+        btn_contact: "Contact Us",
+        btn_buy_now: "Buy Now",
+        btn_compare: "Compare",
+        
+        // 常用词汇
+        pros: "Pros",
+        cons: "Cons",
+        features: "Features",
+        specs: "Specs",
+        price: "Price",
+        warranty: "Warranty",
+        battery: "Battery",
+        motor: "Motor",
+        speed: "Speed",
+        range: "Range",
+        weight: "Weight",
+        charging: "Charging",
         
         // 广告位
         ad_placeholder: "Ad Space"
