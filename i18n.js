@@ -39,6 +39,32 @@ const translations = {
         hero_title: "2026年电动自行车选购指南",
         hero_subtitle: "新国标政策 | 品牌评测 | 选购攻略 | 升级改装",
         hero_desc: "最全面的电动车选购平台，提供最新的政策解读、产品评测、技术指导和改装方案",
+        hero_badge: "🔥 618购车最佳时机 | 7月1日上牌截止倒计时",
+        hero_btn_explore: "开始探索",
+        hero_btn_login: "登录 / 注册",
+        
+        // 功能卡片
+        feature1_title: "🛒 选购指南",
+        feature1_desc: "2026新国标政策解读，主流品牌车型对比，不同预算购车推荐，避坑指南，让你不再踩雷！",
+        feature1_link: "开始选购",
+        feature2_title: "⚡ 升级改装",
+        feature2_desc: "哪些改装合法合规？电池升级、控制器优化、安全强化，让你的小电驴性能拉满！",
+        feature2_link: "查看方案",
+        feature3_title: "💡 升级计算器",
+        feature3_desc: "根据你的需求和预算，智能计算升级方案成本和效果，电池、控制器、刹车一键估算！",
+        feature3_link: "开始计算",
+        feature4_title: "⭐ 品牌评测",
+        feature4_desc: "雅迪、爱玛、小牛、九号等热门品牌深度评测，真实用户体验，帮你选出性价比之王！",
+        feature4_link: "查看评测",
+        
+        // 选购指南
+        guide_title: "🔥 选购指南",
+        guide_subtitle: "2026新国标政策下，如何pick最适合你的电动车？超全选购攻略来袭！",
+        
+        // Tabs
+        tab_policy: "📋 新国标政策",
+        tab_budget: "💰 预算选择",
+        tab_compare: "🏆 品牌对比",
         
         // 评测页
         reviews_title: "品牌评测",
@@ -126,6 +152,32 @@ const translations = {
         hero_title: "2026 Electric Bike Buying Guide",
         hero_subtitle: "New Standards | Brand Reviews | Buying Tips | Upgrades",
         hero_desc: "The most comprehensive electric vehicle selection platform with latest policy updates, product reviews, and technical guides",
+        hero_badge: "🔥 Best Time to Buy! | Deadline: July 1",
+        hero_btn_explore: "Start Exploring",
+        hero_btn_login: "Login / Register",
+        
+        // 功能卡片
+        feature1_title: "🛒 Buying Guide",
+        feature1_desc: "2026 new standards explained, brand comparisons, budget recommendations, avoid pitfalls!",
+        feature1_link: "Start Shopping",
+        feature2_title: "⚡ Upgrade & Mod",
+        feature2_desc: "Legal upgrades explained! Battery upgrades, controller optimization, safety enhancements!",
+        feature2_link: "View Plans",
+        feature3_title: "💡 Upgrade Calculator",
+        feature3_desc: "Smart calculation of upgrade costs and effects, battery, controller, brakes estimation!",
+        feature3_link: "Calculate",
+        feature4_title: "⭐ Brand Reviews",
+        feature4_desc: "In-depth reviews of Yadea, Aima, Ninebot, NIU - find the best value!",
+        feature4_link: "View Reviews",
+        
+        // 选购指南
+        guide_title: "🔥 Buying Guide",
+        guide_subtitle: "How to pick the perfect e-bike under 2026 new standards?",
+        
+        // Tabs
+        tab_policy: "📋 New Policy",
+        tab_budget: "💰 Budget",
+        tab_compare: "🏆 Brand Compare",
         
         // 评测页
         reviews_title: "Brand Reviews",
