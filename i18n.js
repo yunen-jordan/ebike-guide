@@ -8,6 +8,7 @@ const translations = {
         nav_budget: "预算推荐",
         nav_upgrade: "升级改装",
         nav_brands: "品牌对比",
+        nav_lang: "🌐 EN",
         nav_maintenance: "保养指南",
         nav_accessories: "配件商城",
         nav_shop: "官方商城",
@@ -94,6 +95,7 @@ const translations = {
         nav_budget: "Budget",
         nav_upgrade: "Upgrade",
         nav_brands: "Brands",
+        nav_lang: "🌐 中文",
         nav_maintenance: "Maintenance",
         nav_accessories: "Accessories",
         nav_shop: "Shop",
@@ -216,16 +218,18 @@ function updatePageLang(lang) {
     });
 }
 
-// 更新语言切换按钮
+// 更新语言切换链接
 function updateLangButton(lang) {
     const btn = document.getElementById('langSwitchBtn');
     if (btn) {
-        btn.textContent = translations[lang].lang_switch;
+        btn.textContent = translations[lang].nav_lang;
+        btn.setAttribute('data-i18n', 'nav_lang');
     }
 }
 
 // 切换语言
-function toggleLang() {
+function toggleLang(e) {
+    e.preventDefault();
     const currentLang = getCurrentLang();
     const newLang = currentLang === 'zh' ? 'en' : 'zh';
     setLang(newLang);
@@ -243,7 +247,7 @@ function initI18n() {
         updatePageLang(lang);
     }
     
-    // 添加切换按钮点击事件
+    // 添加切换链接点击事件
     const btn = document.getElementById('langSwitchBtn');
     if (btn) {
         btn.addEventListener('click', toggleLang);
