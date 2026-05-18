@@ -20,7 +20,11 @@ const translations = {
         footer_quick_links: "快速链接",
         footer_policy: "政策与法律",
         footer_contact: "联系我们",
+        footer_contact_desc: "如有问题或合作意向，请通过以下方式联系我们：",
         footer_copyright: "© 2026 电动车选购指南 | 让出行更简单",
+        footer_about_desc: "我们是一个专注于电动车选购、使用和升级的指南平台，提供最新的政策解读、产品评测和技术指导。年轻人的出行神器指南！",
+        footer_copyright_1: "© 2026 rushbike. 版权所有. 本网站内容仅供参考，实际购买请以官方信息为准。",
+        footer_copyright_2: "⚡ 让出行更简单，让选择更明智 |年轻人的电动车攻略站",
         
         // 通用
         btn_read_more: "阅读更多",
@@ -190,7 +194,61 @@ const translations = {
         charging: "充电",
         
         // 广告位
-        ad_placeholder: "广告位招商中"
+        ad_placeholder: "广告位招商中",
+        
+        // 热门车型展示
+        gallery_title: "🔥 热门车型展示",
+        gallery_subtitle: "2026年最受欢迎的电动车实拍，各品牌明星产品一网打尽！",
+        
+        // 最新资讯
+        news_title: "📰 最新资讯",
+        news_subtitle: "电动车行业热点追踪，政策解读、行业动态一网打尽！",
+        news_tag_alert: "⚠️ 重要提醒",
+        news_tag_policy: "📋 政策解读",
+        news_tag_industry: "📈 行业动态",
+        news_tag_safety: "🛡️ 安全必读",
+        news_title_1: "7月1日电池新国标倒计时",
+        news_desc_1: "距离GB 38031-2025实施仅44天！不起火、不爆炸，史上最严动力电池安全标准即将生效！",
+        news_title_2: "5月1日起电动车四大新规落地",
+        news_desc_2: "上牌·骑行·改装·充电全链条管控升级！公安部工信部多部门联合推行，4.48亿车主必读！",
+        news_title_3: "雅迪九号台铃爱玛集体涨价300元",
+        news_desc_3: "碳酸锂从7.6万飙至12.5万/吨翻倍暴涨+新安全配置强制加装，涨价推手全解析！",
+        news_title_4: "电动车安全选购指南",
+        news_desc_4: "认准CCC认证、远离非法改装、避开低价陷阱，新国标实施后合规车型才是正道！",
+        btn_read_details: "详细阅读",
+        
+        // 官方商城
+        shop_section_title: "🛍️ 官方商城",
+        shop_section_subtitle: "精选配件与周边正品，好货低价，品质保障！",
+        shop_card_title: "精选配件商城",
+        shop_card_desc: "头盔、锁具、车灯、GPS定位器等必备配件，官方正品保障",
+        shop_tag_genuine: "正品保障",
+        shop_tag_shipping: "快递包邮",
+        shop_tag_return: "7天退换",
+        btn_enter_shop: "进入商城",
+        
+        // 升级改装指南按钮
+        btn_view_details: "查看详情",
+        
+        // 品牌对比结果
+        compare_result_title: "📊 对比结果",
+        data_label_models: "主力车型",
+        data_label_price: "价格区间",
+        data_label_range: "续航里程",
+        data_label_highlight: "核心亮点",
+        data_label_score: "综合评分",
+        data_label_battery: "电池类型",
+        data_label_weight: "车身重量",
+        data_label_smart: "智能配置",
+        data_label_aftersale: "售后保障",
+        btn_view_review: "查看评测",
+        alert_select_two: "请至少选择2个品牌进行对比！",
+        
+        // 计算器结果
+        calc_no_upgrade: "无需升级",
+        calc_yuan: "元",
+        calc_km: "km",
+        calc_speed_compliant: "不超过25km/h (符合国标)"
     },
     en: {
         // 导航
@@ -212,7 +270,11 @@ const translations = {
         footer_quick_links: "Quick Links",
         footer_policy: "Policies & Terms",
         footer_contact: "Contact Us",
+        footer_contact_desc: "For questions or cooperation, contact us:",
         footer_copyright: "© 2026 EBike Guide | Making Travel Easier",
+        footer_about_desc: "A platform focused on e-bike selection, usage, and upgrades. Latest policy updates, product reviews, and technical guides for young riders!",
+        footer_copyright_1: "© 2026 rushbike. All rights reserved. Content for reference only.",
+        footer_copyright_2: "⚡ Making travel easier, choices wiser | Young riders' e-bike guide",
         
         // 通用
         btn_read_more: "Read More",
@@ -382,7 +444,61 @@ const translations = {
         charging: "Charging",
         
         // 广告位
-        ad_placeholder: "Ad Space"
+        ad_placeholder: "Ad Space",
+        
+        // 热门车型展示
+        gallery_title: "🔥 Popular Models",
+        gallery_subtitle: "2026's most popular e-bikes, all star products in one place!",
+        
+        // 最新资讯
+        news_title: "📰 Latest News",
+        news_subtitle: "Industry trends, policy updates, and market insights!",
+        news_tag_alert: "⚠️ Alert",
+        news_tag_policy: "📋 Policy",
+        news_tag_industry: "📈 Industry",
+        news_tag_safety: "🛡️ Safety",
+        news_title_1: "July 1 Battery Standard Countdown",
+        news_desc_1: "Only 44 days until GB 38031-2025! The strictest battery safety standard ever is coming!",
+        news_title_2: "4 New E-Bike Rules from May 1",
+        news_desc_2: "Full-chain control upgrade! Must-read for 448 million e-bike owners!",
+        news_title_3: "Major Brands Raise Prices by ¥300",
+        news_desc_3: "Lithium prices doubled + mandatory safety features, full analysis!",
+        news_title_4: "E-Bike Safety Buying Guide",
+        news_desc_4: "Check CCC certification, avoid illegal mods, compliant models only!",
+        btn_read_details: "Read Details",
+        
+        // 官方商城
+        shop_section_title: "🛍️ Official Shop",
+        shop_section_subtitle: "Premium accessories and genuine products, great value!",
+        shop_card_title: "Premium Accessories",
+        shop_card_desc: "Helmets, locks, lights, GPS trackers - genuine quality guaranteed",
+        shop_tag_genuine: "Genuine",
+        shop_tag_shipping: "Free Shipping",
+        shop_tag_return: "7-Day Return",
+        btn_enter_shop: "Enter Shop",
+        
+        // 升级改装指南按钮
+        btn_view_details: "View Details",
+        
+        // 品牌对比结果
+        compare_result_title: "📊 Comparison Results",
+        data_label_models: "Main Models",
+        data_label_price: "Price Range",
+        data_label_range: "Range",
+        data_label_highlight: "Highlights",
+        data_label_score: "Overall Score",
+        data_label_battery: "Battery",
+        data_label_weight: "Weight",
+        data_label_smart: "Smart Features",
+        data_label_aftersale: "Warranty",
+        btn_view_review: "View Review",
+        alert_select_two: "Please select at least 2 brands to compare!",
+        
+        // 计算器结果
+        calc_no_upgrade: "No upgrade needed",
+        calc_yuan: "CNY",
+        calc_km: "km",
+        calc_speed_compliant: "≤25km/h (Compliant)"
     }
 };
 
