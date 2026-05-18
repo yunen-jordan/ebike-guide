@@ -230,6 +230,26 @@
             transform: translateX(4px);
         }
         
+        /* 语言切换按钮 */
+        .lang-switch-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-left: 16px;
+            transition: all 0.3s ease;
+            min-width: 48px;
+        }
+        
+        .lang-switch-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+        }
+        
         /* 英雄区域登录按钮 */
         .hero-actions {
             display: flex;
@@ -1512,14 +1532,15 @@
             
             <nav id="mainNav">
                 <ul>
-                    <li><a href="index.html" class="active">首页</a></li>
-                    <li><a href="reviews.html">评测</a></li>
-                    <li><a href="faq.html">常见问题</a></li>
-                    <li><a href="budget.html">预算推荐</a></li>
-                    <li><a href="upgrade.html">升级改装</a></li>
-                    <li><a href="accessories.html">配件选购</a></li>
-                    <li><a href="brands.html">品牌对比</a></li>
+                    <li><a href="index.html" class="active" data-i18n="nav_home">首页</a></li>
+                    <li><a href="reviews.html" data-i18n="nav_reviews">评测</a></li>
+                    <li><a href="faq.html" data-i18n="nav_faq">常见问题</a></li>
+                    <li><a href="budget.html" data-i18n="nav_budget">预算推荐</a></li>
+                    <li><a href="upgrade.html" data-i18n="nav_upgrade">升级改装</a></li>
+                    <li><a href="accessories.html" data-i18n="nav_accessories">配件选购</a></li>
+                    <li><a href="brands.html" data-i18n="nav_brands">品牌对比</a></li>
                 </ul>
+                <button id="langSwitchBtn" class="lang-switch-btn" title="切换语言">EN</button>
             </nav>
 
             <!-- 用户登录卡片 -->
@@ -2511,6 +2532,12 @@
             card.addEventListener('mouseleave', () => {
                 card.style.background = 'var(--card-bg)';
             });
+        });
+    </script>
+    <script src="i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.i18n.initI18n();
         });
     </script>
 </body>

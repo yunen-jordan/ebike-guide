@@ -1712,3 +1712,30 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== 语言切换按钮 ===== */
+.lang-switch-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 16px;
+    transition: all 0.3s ease;
+    min-width: 48px;
+}
+
+.lang-switch-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+}
+
+@media (max-width: 768px) {
+    .lang-switch-btn {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+}

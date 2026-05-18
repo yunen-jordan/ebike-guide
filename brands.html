@@ -132,11 +132,12 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html"data-i18n="nav_home">首页</a></li>
                     <li><a href="index.html#buying-guide">选购指南</a></li>
-                    <li><a href="upgrade.html">升级改装</a></li>
-                    <li><a href="brands.html" class="active">品牌对比</a></li>
+                    <li><a href="upgrade.html"data-i18n="nav_upgrade">升级改装</a></li>
+                    <li><a href="brands.html" class="active"data-i18n="nav_brands">品牌对比</a></li>
                 </ul>
+                <button id="langSwitchBtn" class="lang-switch-btn" title="切换语言">EN</button>
             </nav>
         </div>
     </header>
@@ -475,5 +476,12 @@
             </div>
         </div>
     </footer>
+    <script src="i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.i18n.initI18n();
+        });
+    </script>
+
 </body>
 </html>

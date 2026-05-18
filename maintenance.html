@@ -102,13 +102,14 @@
             </button>
             <nav id="mainNav">
                 <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="reviews.html">评测</a></li>
-                    <li><a href="faq.html">常见问题</a></li>
-                    <li><a href="budget.html">预算推荐</a></li>
-                    <li><a href="upgrade.html">升级改装</a></li>
-                    <li><a href="brands.html">品牌对比</a></li>
+                    <li><a href="index.html"data-i18n="nav_home">首页</a></li>
+                    <li><a href="reviews.html"data-i18n="nav_reviews">评测</a></li>
+                    <li><a href="faq.html"data-i18n="nav_faq">常见问题</a></li>
+                    <li><a href="budget.html"data-i18n="nav_budget">预算推荐</a></li>
+                    <li><a href="upgrade.html"data-i18n="nav_upgrade">升级改装</a></li>
+                    <li><a href="brands.html"data-i18n="nav_brands">品牌对比</a></li>
                 </ul>
+                <button id="langSwitchBtn" class="lang-switch-btn" title="切换语言">EN</button>
             </nav>
         </div>
     </header>
@@ -118,7 +119,7 @@
         <div class="breadcrumb" style="padding-top: 100px;">
             <a href="index.html">首页</a>
             <span>></span>
-            <span>保养指南</span>
+            <spandata-i18n="nav_maintenance">保养指南</span>
         </div>
     </div>
     
@@ -283,5 +284,12 @@
     </footer>
 
     <script src="common.js"></script>
+    <script src="i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.i18n.initI18n();
+        });
+    </script>
+
 </body>
 </html>
